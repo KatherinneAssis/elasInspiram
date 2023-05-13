@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
     <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
-
-    <title>ElasInspiram | Home</title>
+    <title>Area-tec | Elas Inspiram</title>
 </head>
 
 <body>
-    <div class="containerGeral">
+    <div class="containerGeralAreaTec">
         <div class="containerNavBar">
             <div class="navBarLogoTitulo">
-                <a href="#">
+                <a href="index.html">
                     <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
@@ -28,9 +26,7 @@
                             fill="#CFA7A5" />
                     </svg>
                 </a>
-
-
-                <a href="#">
+                <a href="index.html">
                     <p>Elas Inpiram</p>
                 </a>
             </div>
@@ -47,47 +43,44 @@
             </div>
         </div>
 
-        <div class="headerPrincipal">
-            <h1>Está é uma página de historia, mulheres fortes que inspiraram e inspiram outras.</h1>
-        </div>
-        <div class="headerImages">
-            <div class="btnImage">
-                <a href="#" class="btn btn1">
-                    <img src="assets/imgs/Ellipse 4.png" alt="Katherinne">
-                    <span>Quem sou</span>
-                </a>
+
+
+
+
+        
+        <div class="headerSalário">
+            <div class="headerSaláriotitulo">
+                <h3>Calcule seu sálario com a gente!</h3>
+
+                <span>você é da área de Tecnologia?</span>
+
+                <div class="headerSalárioCheckBox">
+                    <p>Sim</p><input type="checkbox" id="checkSim">
+                    <p>Não</p><input type="checkbox" id="checkNao">
+                </div>
             </div>
 
-            <div class="btnImage">
-                <a href="#" class="btn btn2">
-                    <img src="assets/imgs/Ellipse 5.png" alt="Movimento Sufragista">
-                    <span>História</span>
-                </a>
+            <div class="headerSalárioInputs">
+                <div class="InputsEspaco">
+                    <span>Seu sálario:</span>
+                    <input type="number" id="inputSalário">
+                </div>
+                <div class="InputsEspaco">
+                    <span>Adicional mensal:</span>
+                    <input type="number" id="inputAddMensal">
+                </div>
+                <div class="InputsEspaco">
+                    <span>Bônus mensal:</span>
+                    <input type="number" id="inputBonusMensal">
+                </div>
             </div>
+            <button onclick="AnalisarRenda()">
+                Analisar minha renda
+            </button>
 
-            <div class="btnImage">
-                <a href="#" class="btn btn3">
-                    <img src="assets/imgs/Ellipse 6.png" alt="Ada Lovelace">
-                    <span>Area-tec</span>
-                </a>
-            </div>
-
-            <div class="btnImage">
-                <a href="#" class="btn btn4">
-                    <img src="assets/imgs/Ellipse 7.png" alt="causas">
-                    <span>Causas</span>
-                </a>
-            </div>
-
-            <div class="btnImage">
-                <a href="#" class="btn btn5">
-                    <img src="assets/imgs/Ellipse 7.png" alt="Destaques">
-                    <span>Destaques</span>
-                </a>
-            </div>
+            <label id="labelResultado"></label>
         </div>
     </div>
-
     <div class="footer">
         <div class="footerIcons">
             <a href="">
@@ -120,6 +113,48 @@
         </div>
         <p>ElasInspiram© 2023. Todos os direitos reservados. Desenvolvido por Katherinne Assis.</p>
     </div>
+
 </body>
 
 </html>
+
+<script>
+    function AnalisarRenda() {
+        var salario = Number(inputSalário.value);
+        var adicional = Number(inputAddMensal.value);
+        var bonus = Number(inputBonusMensal.value);
+        var bruto = salario + adicional + bonus;
+        var desconto_ir = 0;
+        var bruto_pos_ir = bruto;
+
+
+        if (bruto >= 10000) {
+            desconto_ir = bruto * (12.5 / 100);
+            bruto_pos_ir = bruto - desconto_ir;
+        };
+
+        var desconto_inss = bruto_pos_ir * (10 / 100);
+        var desconto_fgts = bruto_pos_ir * (8 / 100);
+        var liquido = bruto_pos_ir - (desconto_inss + desconto_fgts);
+
+
+        labelResultado.innerHTML = `<b>Análise da sua renda:</b>
+        <br>
+        <br> Com o salário de <b>R$${salario}</b>, com o adicional de 
+        <b>R$${adicional}</b> e o bônus de <b>R$${bonus}</b>, você tem:
+        <br>
+        <br> Bruto: <b>R$${bruto}</b>
+        <br> IR: <b>R$${desconto_ir}</b>
+        <br> INSS: <b>R$${desconto_inss}</b>
+        <br> FGTS: <b>R$${desconto_fgts}</b>
+        <br> Liquido: <b>R$${liquido}</b>`;
+
+        if (liquido > 2500) {
+            var poupanca_mensal = liquido * (15 / 100);
+            var poupanca_anual = poupanca_mensal * 12;
+
+            labelResultado.innerHTML += `<br><br>
+            Com a renda de <b>R$${liquido}</b>, é recomendado poupar <b>R$${poupanca_mensal}</b>, para que em um ano tenha poupado <b>R$${poupanca_anual}</b>`;
+        }
+    }
+</script>
