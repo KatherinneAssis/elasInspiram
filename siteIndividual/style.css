@@ -85,7 +85,6 @@ body {
     transition: 0.3s;
     text-decoration: none;
     justify-content: center;
-
     color: #CFA7A5;
 }
 
@@ -101,22 +100,22 @@ body {
     color: #000000;
 }
 
-
 .navBarLista button {
-    width: 15%;
+    width: 10%;
     font-size: 120%;
+    cursor: pointer;
+    border-radius: 10px;
     font-weight: bolder;
     background-color: #CFA7A5;
-    border-radius: 10px;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.313);
-
     transition: 0.5s;
 }
 
 .navBarLista button:hover {
+    width: 15%;
     transition: 0.5s;
-    width: 20%;
-    background-color: #db139b;
+    font-size: 130%;
+    background-color: #9b176b;
 }
 
 /*Final da navbar*/
@@ -225,8 +224,6 @@ body {
 }
 
 
-
-
 /* Fizeram historia*/
 .containerGeralFizeramHistoria {
     width: 100%;
@@ -263,7 +260,7 @@ body {
 
 .fizeramHistoriaTexto p {
     width: 95%;
-    font-size: 110%;
+    font-size: 100%;
     text-align: left;
     align-self: flex-end;
 }
@@ -275,7 +272,7 @@ body {
 .fizeramHistoriaTextoParagrafo2 {
     width: 100%;
     display: flex;
-    font-size: 110%;
+    font-size: 100%;
     text-align: left;
     align-items: center;
     flex-direction: column;
@@ -283,20 +280,19 @@ body {
 
 .fizeramHistoriaTextoParagrafo2 p {
     width: 100%;
-    font-size: 110%;
+    font-size: 100%;
     align-self: center;
 }
 
 .fizeramHistoriaTitulo2 {
     width: 100%;
     margin-top: 3%;
-    font-size: 200%;
+    font-size: 150%;
     text-align: center;
     border-radius: 20px;
 
     color: #CFA7A5;
     background-color: #000000;
-
 }
 
 .fizeramHistoriaTitulo2 h3 {
@@ -305,47 +301,50 @@ body {
 }
 
 .fizeramHistoriaTexto2 {
-    width: 100%;
     display: flex;
-    font-size: 110%;
-    text-align: left;
+    font-size: 100%;
     flex-direction: row;
-    justify-content: center;
 }
 
 .fizeramHistoriaTexto2 p {
-    width: 100%;
-    font-size: 110%;
+    width: 50%;
     margin-left: 2%;
 }
 
 .fizeramHistoriaTexto2 img {
+    width: 50%;
     justify-content: end;
 }
 
 .fizeramHistoriaTexto3 {
     width: 100%;
     display: flex;
-    font-size: 110%;
+    font-size: 100%;
     text-align: left;
-    align-items: center;
     flex-direction: row;
     justify-content: center;
 }
 
 .fizeramHistoriaparagrafos {
     width: 100%;
+    padding: 2% 0;
     display: flex;
     margin-right: 2%;
     flex-direction: column;
 }
 
 .fizeramHistoriaparagrafos p {
-    font-size: 110%;
+    width: 80%;
+    font-size: 100%;
+}
+
+.fizeramHistoriaparagrafos img {
+    width: 80%;
+    margin-top: 3%;
 }
 
 .fizeramHistoriaLegendaImagem {
-    width: 50%;
+    width: 60%;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -354,12 +353,58 @@ body {
 .fizeramHistoriaLegendaImagem p {
     color: #5F0707;
     font-weight: bolder;
-
 }
 
 .fizeramHistoriaLegendaImagem img {
     width: 100%;
 }
+
+.miniImagens {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.miniImagens img {
+    width: 48%;
+}
+
+.headerPresidente {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerPresidente h4 {
+    width: 100%;
+    font-size: 170%;
+    text-align: center;
+    border-radius: 20px;
+
+    color: #CFA7A5;
+    background-color: #000000;
+}
+
+.primeiraPresidente {
+    display: flex;
+    flex-direction: row;
+    background: rgba(50, 20, 55, 0.63);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.43);
+}
+
+.primeiraPresidente img {
+    width: 30%;
+}
+
+.primeiraPresidente p {
+    width: 60%;
+    padding: 2%;
+    font-size: 110%;
+}
+
+
+
 
 
 
@@ -456,4 +501,107 @@ body {
     font-size: 150%;
     font-family: Poppins;
     margin-bottom: 3%;
+}
+
+
+/* E VOCÊ*/
+
+#eVoceBody {
+    display: flex;
+    font-family: Poppins;
+    align-items: center;
+    flex-direction: column;
+    background-color: #765e5d;
+}
+
+.eVoceModal svg {
+    align-self: center;
+}
+
+.eVoceModal h1 {
+    align-self: center;
+}
+
+.eVoceModal {
+    width: 50%;
+    display: flex;
+    margin-top: 5%;
+    color: #CFA7A5;
+    padding: 30px 30px;
+    border-radius: 20px;
+    justify-content: left;
+    flex-direction: column;
+    background-color: #000000ad;
+}
+
+.eVoceModal h1 {
+    font-size: 250%;
+    font-weight: bolder;
+}
+
+.eVoceinput {
+    font-size: 110%;
+}
+
+.eVoceinputNome {
+    display: flex;
+    flex-direction: row;
+}
+
+.eVoceinputNomeCheck {
+    display: flex;
+    flex-direction: row;
+}
+
+.eVoceinputNomeCheck input {}
+
+.eVoceinput input {
+    width: 70%;
+    display: flex;
+    font-size: 80%;
+    color: #CFA7A5;
+    padding: 3px 10px;
+    transition: 0.3s;
+    font-weight: bold;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+
+.eVoceinputDepoimento {
+    display: flex;
+    font-size: 110%;
+    text-align: center;
+    margin: 2%;
+    flex-direction: column;
+}
+
+
+.eVoceinputDepoimento input {
+    width: 90%;
+    align-self: center;
+    color: #CFA7A5;
+    font-size: 80%;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #000000;
+}
+
+.eVoceBotoes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.eVoceBotoes button {
+    width: 20%;
+    margin: 0 3%;
+    cursor: pointer;
+    font-size: 120%;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #5f070789;
 }
