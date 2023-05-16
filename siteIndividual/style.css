@@ -112,7 +112,7 @@ body {
 }
 
 .navBarLista button:hover {
-    width: 15%;
+    width: 13%;
     transition: 0.5s;
     font-size: 130%;
     background-color: #9b176b;
@@ -123,16 +123,31 @@ body {
 
 
 /* footer */
-.footer {
+.footerLogin {
     width: 100%;
     display: flex;
+    margin-top: 8%;
     font-size: 80%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 
     color: white;
-    background: #4a2b48cc;
+    background: #4a2b48d1;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+
+    font-size: 80%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+    background: #4a2b48d1;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -157,8 +172,111 @@ body {
 
 /*final footer*/
 
+/*Cadastro*/
+#bodyCadastro {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #00000094;
+    background-blend-mode: multiply;
+    background-image: url(assets/imgs/bckGrdHome.png);
+}
 
+.CadastroContainer {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.fomulario {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 50%;
+    margin: 5% 0% 5% 0%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    flex-direction: column;
+
+    color: #CFA7A5;
+    background-color: #000000d8;
+}
+
+.campo {
+    width: 70%;
+    margin: 2%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.campo input {
+    width: 90%;
+    background: none;
+    padding: 3px 5px;
+
+    font-size: 110%;
+    color: #ffffff;
+    font-weight: 700;
+
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: #ffffff 3px solid;
+}
+
+.campo input:focus {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.card h2 {
+    font-weight: 800;
+    font-size: 250%;
+}
+
+.card span {
+    font-weight: 800;
+    font-size: 150%;
+}
+
+.card button {
+    width: 30%;
+    margin: 2%;
+    font-weight: bolder;
+    font-size: 190%;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #CFA7A5;
+    transition: 0.5s;
+}
+
+.card button:hover {
+    width: 35%;
+    transition: 0.5s;
+    align-self: center;
+    color: #000000;
+    background-color: #CFA7A5;
+}
 
 
 
