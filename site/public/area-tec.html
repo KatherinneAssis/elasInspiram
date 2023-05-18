@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
+
+    <title>Elas Inspiram | Área-Tec</title>
+</head>
+
+<body>
+    <div class="containerGeralAreaTec">
+        <div class="containerNavBar">
+            <div class="navBarLogoTitulo">
+                <a href="1-index.html">
+                    <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
+                            fill="#CFA7A5" />
+                        <path d="M44.7225 17.5H36.66L26.396 40H34.9731V55H46.4093V40H54.9864L44.7225 17.5Z"
+                            fill="#CFA7A5" />
+                        <path
+                            d="M40.6912 15C43.8492 15 46.4093 12.7614 46.4093 10C46.4093 7.23858 43.8492 5 40.6912 5C37.5332 5 34.9731 7.23858 34.9731 10C34.9731 12.7614 37.5332 15 40.6912 15Z"
+                            fill="#CFA7A5" />
+                    </svg>
+                </a>
+                <a href="1-index.html">
+                    <p>Elas Inspiram</p>
+                </a>
+            </div>
+            <div class="navBarLista">
+                <a href="1-index.html">Home</a>
+                <a href="2-quemSou.html">Quem Sou</a>
+                <a href="3-fizeramHistoria.html">Fizeram-Historia</a>
+                <a href="4-area-tec.html">Área-Tec</a>
+
+                <button onclick="cadastroTela()">Cadastro</button>
+                <button onclick="loginTela()">Login</button>
+            </div>
+        </div>
+        <div class="headerTextoPrincipal">
+            <h2>E quantas somos na área de tecnologia?</h2>
+            <h3>Imagine como seria o mundo se os estereótipos de gênero nunca tivessem existido e a sociedade sempre
+                dissesse às mulheres e meninas: “SIM! VOCÊ PODE!”?</h3>
+            <div class="AreaTecTextosImagens">
+                <img src="assets/imgs/image 3.png" alt="">
+                <div class="AreaTecTextos">
+                    <p>Por anos achamos que não havia espaço para nós nas áreas ligadas a ciência, tecnologia,
+                        engenharia e
+                        matemática, isso sem sequer pensar no mundo de oportunidades infinitas que a tecnologia oferece.
+                        Porém, com a chegada da pandemia por Covid-19 , vimos a importância da tecnologia e como ela
+                        pode
+                        transformar a sociedade. </p>
+                    <p> A aceleração da digitalização trouxe novas oportunidades, mas para
+                        compreende-as,
+                        devemos ser capazes de medir e gerar dados atualizados.</p>
+                    <p>Como mostra no relatório Global Gender Gap 2022, que foi publicado pelo fórum econômico mundial,
+                        a
+                        porcentagem de mulheres formadas em tecnologia da informação é de 1,7% em comparação a 8,2% dos
+                        homens
+                        formados. Isso nos mostra que ainda há um longo caminho para nós mulheres percorremos e
+                        motivarmos
+                        umas
+                        as outras para aumentar essa porcentagem.</p>
+                </div>
+            </div>
+            <div class="AreaTecTextosImagens">
+                <div class="AreaTecTextos">
+                    <p> O pioneirismo da matemática britânica Ada Lovelace, que formulou, no século 19, o primeiro
+                        algoritmo para ser processado por uma máquina, está atravessando o tempo. Em um levantamento da
+                        Associação das Empresas de Tecnologia da Informação e Comunicação e de Tecnologias Digitais
+                        (Brasscom) mostra que no ano passado o setor de tecnologia da informação empregava no Brasil 867
+                        mil pessoas, sendo    (63,1%) homens, e 319.8 mil (36,9%) mulheres. </p>
+
+                    <p> Dentro do setor ainda há disparidades. Homens ocupam 67% dos cargos de gerência e diretoria,
+                        enquanto 33% das mulheres alcançam as hierarquias mais altas. No departamento de tecnologia da
+                        informação, pesquisa e desenvolvimento e engenharia, que abrangem justamente as vagas com
+                        potencial de crescimento e maior remuneração, homens ocupam 80% dos postos, e às mulheres os
+                        20%. A desigualdade no setor é amenizada por funções de menor valor agregado. Elas são maioria
+                        na área de recursos humanos, financeiro, administração ou limpeza (62% a 38%).</p>
+                </div>
+                <img src="assets/imgs/image 4.png" alt="">
+            </div>
+            <div class="Mulheres"></div>
+        </div>
+        <div class="headerSalário">
+            <div class="headerSaláriotitulo">
+                <h3>Calcule seu sálario com a gente!</h3>
+                <span>Cadastre-se e participe também do nosso mural, lá nós compartilhamos história, salários e áreas
+                    que valem
+                    apena investir e criar carreira, você também pode interargir com ONGs e fazer doações, enquanto
+                    acompanha o
+                    crecimento delas!</span> <br>
+                <span>Neste cálculo você pode ver com clareza cada desconto que possui na sua folha de pagamento.
+                </span>
+                <button class="botaoTelaAreaTec" onclick="cadastroTela()">Cadastrar</button>
+            </div>
+            <div class="headerSalárioInputs">
+                <div class="InputsEspaco">
+                    <span>Seu sálario:</span>
+                    <input type="number" id="inputSalário">
+                </div>
+                <div class="InputsEspaco">
+                    <span>Adicional mensal:</span>
+                    <input type="number" id="inputAddMensal">
+                </div>
+                <div class="InputsEspaco">
+                    <span>Bônus mensal:</span>
+                    <input type="number" id="inputBonusMensal">
+                </div>
+            </div>
+            <button onclick="AnalisarRenda()">
+                Analisar minha renda
+            </button>
+            <label id="labelResultado"></label>
+        </div>
+
+
+        <div class="LinhaDoTempoContainer">
+            <h2> 5 Mulheres Que Fizeram Historia Na Tecnologia</h2>
+            <div class="containerLinhaTempo">
+                <div class="EventoConteudo esquerda">
+                    <div class="Conteudo">
+                        <h3>Ada Lovelace</h3>
+                        <p> A famosa condessa de Lovelace, chamada de Augusta Ada King, ela analisava e traduzia
+                            diversos
+                            materiais dos matemáticos contemporâneos.</p>
+
+                        <p> Isso ajudou para que o primeiro algoritmo do mundo fosse desenvolvido. No
+                            entanto, nessa época, Lovelace não tinha à sua disposição máquinas que fossem capazes de
+                            testar esses códigos e provar que a sua lógica estava correta.</p>
+
+                        <p> A boa notícia é que a descoberta de Ada Lovelace foi testada e comprovada anos depois de sua
+                            morte, quando já existiam computadores com a capacidade de processar esse tipo de algoritmo.
+                            É por isso que atualmente ela é considerada a mãe da computação e, inclusive, existe um
+                            prêmio em seu nome destinado às pessoas que desenvolvem inovações nessa área.
+                        </p>
+                    </div>
+                </div>
+                <div class="EventoConteudo direita">
+                    <div class="Conteudo">
+                        <h3>Carol Shaw</h3>
+                        <p>Se você gosta de videogames, vai adorar conhecer a história de Carol Shaw. Nascida na região
+                            do Vale do Silício, no ano de 1955, ela é considerada a primeira mulher que começou a
+                            trabalhar com o desenvolvimento de jogos digitais.
+                            Shaw criou softwares para games e consoles, sendo pioneira na geração procedural de
+                            conteúdo, que nada mais é que o aumento gradual da dificuldade nos níveis do jogo. Em várias
+                            de suas obras, uma fase era totalmente diferente da outra, conceito utilizado até hoje nos
+                            maiores títulos de jogos.
+                            Com isso, a engenheira da computação foi uma das primeiras colaboradoras da Atari,
+                            trabalhando também em empresas como a Activision. Entre as suas principais contribuições,
+                            podemos citar os jogos:</p>
+                    </div>
+                </div>
+                <div class="EventoConteudo esquerda">
+                    <div class="Conteudo">
+                        <h3>Roberta Williams</h3>
+                        <p> Essa mulher foi a cofundadora de uma das principais empresas da indústria dos games, a
+                            Sierra, que futuramente se fundiu com a Activision. Depois de ser apresentada ao jogo
+                            Adventure, que era feito por meio de texto, Roberta Williams teve a ideia de desenvolver
+                            jogos com conteúdos visuais, criando o Mistery House, uma de suas primeiras obras de maior
+                            relevância.
+
+                            Essa sua ideia foi uma revolução no design de jogos, influenciando diversas criações. A
+                            empresa fundada junto ao seu marido, Ken Williams, foi responsável pela criação de diversos
+                            títulos conhecidos, como Phantasmagoria e King’s Quest.
+                        </p>
+                    </div>
+                </div>
+                <div class="EventoConteudo direita">
+                    <div class="Conteudo">
+                        <h3>Grace Hopper</h3>
+                        <p> Você já parou para pensar de onde surgiu o termo “bug” para se referir a problemas nos
+                            sistemas computacionais? Ao que tudo indica, ele passou a ser usado depois que Grace Hopper
+                            solucionou um erro de processamento de dados ao retirar um inseto (chamado de “bug” na
+                            língua inglesa) de dentro de uma máquina.
+                            Mas, claro, não foi apenas essa a sua contribuição. Hopper foi a primeira mulher a ter um
+                            PhD em Matemática na universidade de Yale. Trabalhou também na área da tecnologia dentro da
+                            Marinha dos Estados Unidos.
+                            Além disso, foi uma das idealizadoras de uma das linguagens de programação mais utilizadas
+                            para banco de dados de negócios, a COBOL. Contribuiu também para a criação do primeiro
+                            computador comercializado nos Estados Unidos, o UNIVAC.
+                        </p>
+                    </div>
+                </div>
+                <div class="EventoConteudo esquerda">
+                    <div class="Conteudo">
+                        <h3>Hedy Lamarr</h3>
+                        <p> Você sabia que uma atriz do início do século XX teve influência na criação de tecnologias
+                            aplicadas até hoje em GPS e Wi-Fi? Hedy Lamarr, além de ser famosa nos cinemas, teve ideias
+                            que foram utilizadas até mesmo para a interceptação de mensagens durante a guerra.
+
+                            Ao perceber a variação da frequência emitida pelas notas tocadas no piano, notou que as
+                            estações de radiocomunicação poderiam funcionar de forma parecida.
+
+                            Assim, junto de George Antheil, desenvolveu um sistema de interferência de rádio, utilizado
+                            para evitar a detecção de mensagens dos EUA pelos países inimigos na Segunda Guerra Mundial.
+                            Esse conceito é aplicado até hoje em smartphones, Wi-Fi, GPS, Bluetooth e diversas outras
+                            tecnologias.
+                        </p>
+                    </div>
+                </div>
+                <div class="EventoConteudo direita">
+                    <div class="Conteudo">
+                        <h3> Katherine Johnson</h3>
+                        <p> Katherine Johnson, além de concluir aos 18 anos as suas primeiras graduações, em Matemática
+                            e Francês, ainda foi a primeira mulher negra a ingressar em um curso de pós-graduação na
+                            universidade West Virginia State. Suas ideias fizeram com que trabalhasse na NACA, um órgão
+                            que, futuramente, viria a se tornar a NASA.
+
+                            Uma de suas principais contribuições foi o cálculo de trajetória de voo para a missão de
+                            primeiro pouso na lua, feito pelo Apolo 11. Uma parte de sua história pode ser assistida no
+                            filme “Estrelas Além do Tempo”.
+
+                            Ver as histórias de mulheres na tecnologia é fundamental para se inspirar a seguir na
+                            carreira de interesse, independentemente dos desafios enfrentados. É importante se lembrar
+                            de que a maioria dessas figuras se desenvolveu em épocas em que apenas ter acesso ao Ensino
+                            Superior já era difícil para pessoas do sexo feminino. Ainda existe um longo caminho a ser
+                            percorrido, mas, olhando a trajetória de diversas pessoas, é possível ter esperança de
+                            muitos avanços na área.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footerIcons">
+                <a href="https://www.linkedin.com/in/katherinne-assis-a9100516a/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </svg></a>
+
+                <a href="https://github.com/katherinneassis">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-github" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg></a>
+
+                <a href="https://br.pinterest.com/katherinneassis/"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        height="30" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z" />
+                    </svg></a>
+
+
+                <a href="https://instagram.com/katherinneassis?igshid=MTIyMzRjYmRlZg== ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg></a>
+
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-mailbox" viewBox="0 0 16 16">
+                        <path
+                            d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z" />
+                        <path
+                            d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z" />
+                    </svg></a>
+            </div>
+            <p>ElasInspiram© 2023. Todos os direitos reservados. Desenvolvido por Katherinne Assis.</p>
+        </div>
+</body>
+
+</html>
