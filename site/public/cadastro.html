@@ -7,17 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="./js/funcoes.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon/faviconEI.ico">
 
     <title>Elas Inspiram | Cadastro</title>
 </head>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <body id="bodyCadastro">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <div class="containerNavBar">
         <div class="navBarLogoTitulo">
-            <a href="1-index.html">
+            <a href="index.html">
                 <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
@@ -29,15 +31,15 @@
                         fill="#CFA7A5" />
                 </svg>
             </a>
-            <a href="1-index.html">
+            <a href="index.html">
                 <p>Elas Inspiram</p>
             </a>
         </div>
         <div class="navBarLista">
-            <a href="1-index.html">Home</a>
-            <a href="2-quemSou.html">Quem Sou</a>
-            <a href="3-fizeramHistoria.html">Fizeram-Historia</a>
-            <a href="4-area-tec.html">Área-Tec</a>
+            <a href="index.html">Home</a>
+            <a href="quemSou.html">Quem Sou</a>
+            <a href="fizeramHistoria.html">Fizeram-Historia</a>
+            <a href="area-tec.html">Área-Tec</a>
 
             <button onclick="cadastroTela()">Cadastro</button>
             <button onclick="loginTela()">Login</button>
@@ -68,6 +70,9 @@
                     <div class="campo">
                         <span>Confirmação da Senha:</span>
                         <input id="confirmacao_senha_input" type="password" placeholder="******">
+                    </div>
+                    <div id="div_aguardar" class="loading-div" style="display: none;">
+                        <img height="100px" src="assets/imgs/giphyCarregamento.gif" alt="">
                     </div>
                     <button onclick="cadastrar()">Cadastrar</button>
                 </div>
@@ -126,8 +131,7 @@
 
 <script>
     function cadastrar() {
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
+        aguardar()
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -146,45 +150,26 @@
         else if (senhaVar.length < 8) {
             swal("Ops", "A senha inserida é muito curta. Por favor insira novamente.", "warning")
         }
-        // else {
-        //     setInterval(sumirMensagem, 5000)
-        // }
-
-        // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-
             console.log("resposta: ", resposta);
-
             if (resposta.ok) {
-                // cardErro.style.display = "block";
-
-                swal("Cadastro realizado com sucesso");
-
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-
-                // limparFormulario();
-                // finalizarAguardar();
-            } else {
-                swal("Erro ao tentar realizar o cadastro");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-
         return false;
     }
 </script>

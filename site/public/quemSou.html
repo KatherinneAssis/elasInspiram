@@ -17,7 +17,7 @@
     <div class="containerGeralQuemSou">
         <div class="containerNavBar">
             <div class="navBarLogoTitulo">
-                <a href="1-index.html">
+                <a href="index.html">
                     <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
@@ -29,15 +29,15 @@
                             fill="#CFA7A5" />
                     </svg>
                 </a>
-                <a href="1-index.html">
+                <a href="index.html">
                     <p>Elas Inspiram</p>
                 </a>
             </div>
             <div class="navBarLista">
-                <a href="1-index.html">Home</a>
-                <a href="2-quemSou.html">Quem Sou</a>
-                <a href="3-fizeramHistoria.html">Fizeram-Historia</a>
-                <a href="4-area-tec.html">Área-Tec</a>
+                <a href="index.html">Home</a>
+                <a href="quemSou.html">Quem Sou</a>
+                <a href="fizeramHistoria.html">Fizeram-Historia</a>
+                <a href="area-tec.html">Área-Tec</a>
 
                 <button onclick="cadastroTela()">Cadastro</button>
                 <button onclick="loginTela()">Login</button>
@@ -49,15 +49,28 @@
             <div class="headerQuemSouImagens">
                 <img src="assets/imgs/Katherinne.jpg" alt="">
                 <div class="textoQuemsou">
-                    <h3>Linha do tempo</h3>
-                    <span></span>
-                    <h3> Sobre mim</h3>
+                    <button class="buttonQuemSou" onclick="abrirEvento(event, 'quemSou')">Sobre Mim</button>
+                    <button class="buttonQuemSou" onclick="abrirEvento(event, 'Motivo')">Objetivo</button>
                 </div>
                 <img src="assets/imgs/sheBelieved.png" alt="">
             </div>
-            <div class="headerLinhaSobreMim"></div>
-            <div class="headerSobreMim"></div>
+            <div id="quemSou" class="conteudoQuemSou">
+                <h3>Sobre Mim</h3>
+                <p>Katherinne Assis. 22 Anos. Estudante de Analise e desenvolvimento de sistemas na São Paulo Tech
+                    School.</p>
+                <p>Formada em RH, mas desde o inicio sem sentir que realmente havia me encontrado, até conhecer a
+                    tecnologia e o quanto isso pode ajudar pessoas.</p>
+            </div>
+            <div id="Motivo" class="conteudoQuemSou">
+                <h3>Objetivo</h3>
+                <p>Meu objetivo com essa página é apoiar mulheres e causas, pensei sobre ela após em uma conversa com
+                    minha mãe falamos em
+                    como seria se tivessemos esse espaço para falar de mulher para mulher para receber apoio e
+                    sentir que somos entendidas. E assim nasceu o Elas Inspiram, de mulheres fortes para mulheres
+                    fortes.</p>
+            </div>
         </div>
+
         <div class="bannerQuemMeInspira">
             <h2>E Quem Me Inspira?</h2>
             <h3>Pessoas Fortes Que Me Influenciam e Inspiram</h3>
@@ -68,13 +81,12 @@
                         <div class="Conteudo">
                             <h3>Gracielle Assis</h3>
                             <p>Uma verdadeira inspiração para mim. Que ao se tornar mãe tão jovem, precisou enfrentar
-                                diversos desafios. Mas com coragem e determinação, assumiu o papel de mãe com
+                                diversos desafios. Mas com coragem e determinação, assumiu o papel com coragem,
                                 responsabilidade e amor. Superou obstáculos que surgiram em nossos caminhos,
                                 demonstrando uma força admirável e uma vontade inabalável de oferecer a mim uma vida
                                 plena e repleta de oportunidades.</p>
 
-                            <p>Ela é, para mim a prova viva de que o amor e o apoio de uma mãe podem superar qualquer
-                                adversidade. Sua história é um lembrete poderoso de que o amor e a determinação podem
+                            <p> Sua história é um lembrete poderoso de que o amor e a determinação podem
                                 criar um impacto duradouro na vida de uma pessoa.</p>
 
                             <p>Sou extremamente privilegiada por ter-la.</p>

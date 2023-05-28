@@ -1,4 +1,6 @@
 body {
+    width: 100%;
+    height: 100%;
     margin: 0%;
     padding: 0%;
     font-family: Poppins;
@@ -37,7 +39,7 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     background-image: url(assets/imgs/bckGrdHome.png);
-    background-color: #000000b2;
+    background-color: #000000db;
 }
 
 /* NavBar */
@@ -294,6 +296,7 @@ body {
     color: #000000;
     background-color: #CFA7A5;
 }
+
 /*Fim cadastro*/
 
 
@@ -303,18 +306,27 @@ body {
     width: 100%;
     padding: 3% 0;
     justify-content: center;
+    flex-direction: column;
 }
 
 .headerPrincipal h1 {
     width: 80%;
+    align-self: center;
     padding-top: 1%;
     font-size: 250%;
     font-weight: 800%;
     line-height: 4 0%;
-    padding-bottom: 2%;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #CFA7A5;
+}
+
+.headerPrincipal h3 {
+    width: 80%;
+    font-size: 150%;
+    align-self: center;
+    color: #CFA7A5;
+    text-align: center;
 }
 
 .headerImages {
@@ -670,7 +682,16 @@ body {
     text-align: center;
 }
 
-
+#paragrafoFim {
+    margin-top: 5px;
+    width: 80%;
+    font-size: 130%;
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #4a2b48d1;
+}
 
 /*Começo Area-tec*/
 .containerGeralAreaTec {
@@ -697,7 +718,7 @@ body {
     font-size: 150%;
 }
 
-.AreaTecTextosImagens {}
+
 
 .AreaTecTextosImagens {
     display: flex;
@@ -720,9 +741,62 @@ body {
 }
 
 .headerTextoPrincipal {
-    width: 80%;
+    width: 90%;
 }
 
+#menor {
+    font-size: 90%;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.esquerda img {
+    width: 60%;
+    margin-left: 115%;
+    margin-top: -75%;
+    position: absolute;
+    border: #5F0707 10px solid;
+}
+
+.direita img {
+    position: absolute;
+    width: 70%;
+    margin-left: -90%;
+    margin-top: -60%;
+
+    border: #5F0707 10px solid;
+}
+
+#roberta {
+    margin-top: -65%;
+}
+
+#grace {
+    width: 60%;
+    margin-top: -80%;
+}
+
+#hedy {
+    margin-left: 110%;
+    margin-top: -80%;
+}
+
+#katherinne {
+    width: 50%;
+    margin-top: -65%;
+}
+
+#paragrafofim {
+    width: 80%;
+    text-align: center;
+    margin: 15px 0 20px 0;
+    padding: 15px;
+    font-size: 100%;
+    color: #CFA7A5;
+    border-radius: 20px;
+    background-color: #000000d9;
+
+}
 
 #myCharts {
     width: 50%;
@@ -814,6 +888,10 @@ body {
     margin-bottom: 3%;
 }
 
+
+
+
+
 /*quemSou*/
 #bodyQuemsou {
     background-color: #CFA7A5;
@@ -826,7 +904,6 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-
 
 .headerQuemSou {
     width: 90%;
@@ -843,13 +920,66 @@ body {
 }
 
 .headerQuemSou h1 {
-    margin-top: 1%;
+    margin-top: 2%;
     font-size: 250%;
     letter-spacing: 2px;
     font-weight: bolder;
 
     color: #CFA7A5;
 }
+
+.textoQuemsou {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textoQuemsou button {
+    width: 45%;
+    padding: 10px;
+    display: block;
+    font-size: 120%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    border-radius: 30px;
+    text-decoration: underline;
+
+    color: #CFA7A5;
+    background-color: #000000;
+}
+
+.textoQuemsou button:hover {
+    color: #000000;
+    transition: 0.3s;
+    font-weight: bolder;
+    background-color: #2a6311;
+}
+
+.conteudoQuemSou {
+    width: 85%;
+    color: #000000;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudoQuemSou h3 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #000000;
+    border-radius: 60%;
+    background-color: #2a6311a7;
+}
+
+.conteudoQuemSou p {
+    padding: 5px 5px;
+    border: #5F0707 2px solid;
+    font-size: 110%;
+    font-weight: bold;
+}
+
 
 .headerQuemSouImagens {
     width: 100%;
@@ -859,7 +989,7 @@ body {
 
 .headerQuemSouImagens img {
     width: 15%;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 1%;
     margin-right: 1%;
     align-self: flex-start;
@@ -875,20 +1005,7 @@ body {
     border-radius: 20px;
     align-items: center;
     flex-direction: row;
-    justify-content: space-evenly;
-
-    color: #CFA7A5;
-    background-color: #000000;
-    -webkit-box-shadow: 16px 17px 5px 0px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: 16px 17px 5px 0px rgba(0, 0, 0, 0.6);
-    box-shadow: 16px 17px 5px 0px rgba(0, 0, 0, 0.6);
-}
-
-.textoQuemsou span {
-    width: 2px;
-    height: 30px;
-    background-color: #000000;
-
+    justify-content: space-between;
 }
 
 .bannerQuemMeInspira {
@@ -954,4 +1071,193 @@ body {
 .Conteudo img {
     width: 30%;
     border-radius: 10px;
+}
+
+
+
+
+
+/* Mural*/
+#bodyMural {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    font-family: poppins;
+    flex-direction: column;
+    background-color: #CFA7A5;
+}
+
+.containerMenu {
+    flex-direction: row;
+}
+
+.menuMural {
+    position: fixed;
+    border: none;
+    display: flex;
+    width: 20%;
+    float: left;
+    height: 100vh;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+
+
+    background-color: rgb(0, 0, 0);
+    -webkit-box-shadow: 13px 9px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 9px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 9px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.muralLogo {
+    margin: 20% 0 40% 0;
+    text-decoration: none;
+}
+
+.muralLogo a {
+    color: #CFA7A5;
+    text-decoration: none;
+}
+
+.muralLogo svg {
+    width: 100%;
+    align-self: center;
+}
+
+.muralLogo h1 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 130%;
+    color: #CFA7A5;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.containerMenu h3 {
+    font-size: 150%;
+    color: #2a6311;
+}
+
+.menuMural button {
+    width: 100%;
+    display: block;
+    border: none;
+    font-size: 120%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 22px 16px;
+
+    color: #CFA7A5;
+    background-color: #00000000;
+}
+
+.menuMural button:hover {
+    transition: 0.3s;
+
+    color: #000000;
+    background-color: #CFA7A5;
+}
+
+.menuMural button.active {
+    color: #000000;
+    background-color: #CFA7A5;
+}
+
+.conteudoMural {
+    width: 70%;
+    float: right;
+    margin-top: 3%;
+    margin-left: 25%;
+
+    color: #fbfbfb;
+    font-size: 110%;
+    font-weight: bold;
+    border-left: none;
+}
+
+#buttonSair {
+    width: 40%;
+    margin-top: 20%;
+    padding: 3px 5px;
+    font-weight: 500;
+    border-radius: 20px;
+
+    color: #ffffff;
+    border: #CFA7A5 2px solid;
+    background-color: #000000;
+}
+
+.conteudoOpcaoMural {
+    display: none;
+    text-align: center;
+
+    color: #000000;
+}
+
+#muralApoio {
+    text-align: left;
+}
+
+#muralApoio h1 {
+    font-size: 200%;
+    margin-bottom: 0;
+
+    color: #306817;
+}
+
+#muralApoio h3 {
+    margin-top: 0;
+    font-size: 100%;
+    margin-bottom: 5%;
+}
+
+.muralPostagens {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.muralPostagens input {
+    width: 50%;
+    padding: 5px;
+    font-size: 100%;
+    align-self: flex-start;
+
+    color: #9e6e6c;
+    background-color: #000000c3;
+}
+
+.muralPostagens textarea {
+    width: 90%;
+    height: 15vh;
+    padding: 5px;
+    font-size: 100%;
+    align-self: flex-start;
+
+    color: #9e6e6c;
+    background-color: #000000c3;
+}
+
+.muralPostagens span {
+    width: 100%;
+    font-size: 120%;
+    text-align: left;
+
+    color: #306817;
+}
+
+.muralPostagens button {
+    width: 20%;
+    margin: 3%;
+    padding: 10px;
+    font-size: 100%;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border-radius: 20px;
+
+    color: #9e6e6c;
+    border: #306817 3px solid;
+    background-color: #000000dc;
 }

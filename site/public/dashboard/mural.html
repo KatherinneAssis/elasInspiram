@@ -1,132 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="./dashboards.css">
-    <script src="../js/funcoes.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <title>Elas Inspiram | Mural</title>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
-    <!-- <body onload="validarSessao()"> -->
-
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
+<body id="bodyMural">
+    <div class="containerMenu">
+        <div class="menuMural">
+            <div class="muralLogo">
+                <a href="index.html">
+                    <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
+                            fill="#CFA7A5" />
+                        <path d="M44.7225 17.5H36.66L26.396 40H34.9731V55H46.4093V40H54.9864L44.7225 17.5Z"
+                            fill="#CFA7A5" />
+                        <path
+                            d="M40.6912 15C43.8492 15 46.4093 12.7614 46.4093 10C46.4093 7.23858 43.8492 5 40.6912 5C37.5332 5 34.9731 7.23858 34.9731 10C34.9731 12.7614 37.5332 15 40.6912 15Z"
+                            fill="#CFA7A5" />
+                    </svg>
+                    <h1>Elas Inspiram</h1>
                 </a>
             </div>
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
 
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
+            <button class="opcaoMural" onclick="abrirEspecificoMenu('muralApoio', this)" id="defaultOpen">Mural de
+                Apoio</button>
 
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
+            <button class="opcaoMural" onclick="abrirEspecificoMenu('causasMural', this)" id="defaultOpen">Apoie
+                Causas</button>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+            <button class="opcaoMural" onclick="abrirEspecificoMenu('doacoesMural', this)" id="defaultOpen">Minhas
+                Doações</button>
 
-        </div>
-
-        <div class="dash-right">
-
-            <div class="avisos">
-                <div class="container">
-                    <h1>Publicar um aviso</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Avisos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
-
+            <button id="buttonSair" onclick="SairLogin()">Sair</button>
         </div>
     </div>
-
-
-
-
+    <div class="conteudoMural">
+        <div id="muralApoio" class="conteudoOpcaoMural">
+            <h1>Mural de apoio</h1>
+            <h3>Gostaria de compartilhar algo? Aqui é o seu espaço para isto!</h3>
+            <form class="muralPostagens" id="formularioPostagem" method="post" onsubmit="return publicar()">
+                <span>Título do depoimento:</span>
+                <input name="titulo" id="titulo" maxlength="100" type="text">
+                <span>Depoimento:</span>
+                <textarea name="descricao" id="textarea_descricao" maxlength="1000" rows="20"></textarea>
+                <button>Enviar</button>
+            </form>
+        </div>
+        <div id="causasMural" class="conteudoOpcaoMural">
+            <h1>Apoie
+                Causas</h1>
+            <p>causas.</p>
+        </div>
+        <div id="doacoesMural" class="conteudoOpcaoMural">
+            <h1>Minhas
+                Doações</h1>
+            <p>doacoes</p>
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script>
-    
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function abrirEspecificoMenu(nomeOpcaoMenu, elmnt) {
+        var i, conteudoOpcaoMural, opcaoMural;
 
+        conteudoOpcaoMural = document.getElementsByClassName("conteudoOpcaoMural");
+        for (i = 0; i < conteudoOpcaoMural.length; i++) {
+            conteudoOpcaoMural[i].style.display = "none";
+        }
+
+        opcaoMural = document.getElementsByClassName("opcaoMural");
+        for (i = 0; i < opcaoMural.length; i++) {
+            opcaoMural[i].style.backgroundColor = "";
+        }
+
+        document.getElementById(nomeOpcaoMenu).style.display = "block";
+
+    }
+    document.getElementById("defaultOpen").click();
+
+
+
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
-
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
-
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
         }
-
         fetch(`/avisos/publicar/${idUsuario}`, {
             method: "post",
             headers: {
@@ -151,19 +127,14 @@
             console.log(`#ERRO: ${resposta}`);
             finalizarAguardar();
         });
-
         return false;
-
     }
-
     function editar(idAviso) {
         sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
         console.log("cliquei em editar - " + idAviso);
         window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
         window.location = "/dashboard/edicao-aviso.html"
-
     }
-
     function deletar(idAviso) {
         console.log("Criar função de apagar post escolhido - ID" + idAviso);
         fetch(`/avisos/deletar/${idAviso}`, {
@@ -197,7 +168,6 @@
                     feed.appendChild(mensagem);
                     throw "Nenhum resultado encontrado!!";
                 }
-
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
@@ -205,7 +175,6 @@
                     feed.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
-
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
@@ -215,31 +184,24 @@
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
-
-
                         spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
-
                         divPublicacao.className = "publicacao";
                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
-
                         divButtons.className = "div-buttons"
-
                         btnEditar.className = "publicacao-btn-editar"
                         btnEditar.id = "btnEditar" + publicacao.idAviso;
                         btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
                         btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
-
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
@@ -249,7 +211,6 @@
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
-
                     finalizarAguardar();
                 });
             } else {
@@ -260,20 +221,13 @@
             finalizarAguardar();
         });
     }
-
     function testar() {
         aguardar();
-
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
-
         var divResultado = document.getElementById("div_feed");
-
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
-
         finalizarAguardar();
-
         return false;
     }
-
 </script>

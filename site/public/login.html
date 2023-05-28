@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="script.js"></script>
+    <script src="js/funcoes.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
 
@@ -16,7 +17,7 @@
 <body id="bodyCadastro">
     <div class="containerNavBar">
         <div class="navBarLogoTitulo">
-            <a href="1-index.html">
+            <a href="index.html">
                 <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
@@ -28,15 +29,15 @@
                         fill="#CFA7A5" />
                 </svg>
             </a>
-            <a href="1-index.html">
+            <a href="index.html">
                 <p>Elas Inspiram</p>
             </a>
         </div>
         <div class="navBarLista">
-            <a href="1-index.html">Home</a>
-            <a href="2-quemSou.html">Quem Sou</a>
-            <a href="3-fizeramHistoria.html">Fizeram-Historia</a>
-            <a href="4-area-tec.html">Área-Tec</a>
+            <a href="index.html">Home</a>
+            <a href="quemSou.html">Quem Sou</a>
+            <a href="fizeramHistoria.html">Fizeram-Historia</a>
+            <a href="area-tec.html">Área-Tec</a>
 
             <button onclick="cadastroTela()">Cadastro</button>
             <button onclick="loginTela()">Login</button>
@@ -60,9 +61,10 @@
                         <span>Senha:</span>
                         <input id="input_senha" type="password" placeholder="******">
                     </div>
+                    <div id="div_aguardar" class="loading-div" style="display: none;">
+                        <img height="100px" src="assets/imgs/giphyCarregamento.gif" alt="">
+                    </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
-                </div>
-                <div id="div_aguardar" class="loading-div">
                 </div>
                 <div id="div_LoginDoUsuario"></div>
             </div>
@@ -92,6 +94,7 @@
 
 
             <a href="https://instagram.com/katherinneassis?igshid=MTIyMzRjYmRlZg== ">
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
                     <path
@@ -114,15 +117,14 @@
 </html>
 <script>
     function entrar() {
+        aguardar();
         var dadosDoUsuario = {
             email: input_email.value,
             senha: input_senha.value
         }
         if (dadosDoUsuario.email.indexOf("@") && (dadosDoUsuario.email.endsWith(".com") || dadosDoUsuario.email.endsWith(".school"))) {
             div_LoginDoUsuario.innerHTML = ``;
-
-            if (dadosDoUsuario.senha.length > 8 && dadosDoUsuario.senha.length < 16) {
-
+            if (dadosDoUsuario.senha.length > 8 || dadosDoUsuario.senha.length < 16) {
                 fetch("/usuarios/autenticar", {
                     method: "POST",
                     headers: {
@@ -139,19 +141,18 @@
                         console.log(resposta);
 
                         resposta.json().then(json => {
+
                             console.log(json);
                             console.log(JSON.stringify(json));
 
-                            sessionStorage.EMAIL_USUARIO = json.email;
-                            sessionStorage.NOME_USUARIO = json.nome;
+                            sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                            sessionStorage.NOME_USUARIO = json.nomeUsuario;
                             sessionStorage.ID_USUARIO = json.idUsuario;
 
                             setTimeout(function () {
                                 console.log('Conectado!');
-                                window.location = "index.html";
-                                /*Colocar página da calculadora!*/
-                            }, 1000); // apenas para exibir o loading
-
+                                window.location = "mural.html";
+                            }, 1000);
                         });
 
                     } else {
@@ -160,14 +161,14 @@
                             icon: 'error',
                             title: 'Eita...',
                             text: 'Houve um erro ao tentar realizar o login!',
-                            imageUrl: './imagens/vaultBoyDeuRuim.gif'
+                            imageUrl: 'https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif'
                         })
 
                         console.log("Houve um erro ao tentar realizar o login!");
 
                         resposta.text().then(texto => {
                             console.error(texto);
-                            finalizarAguardar(texto);
+                            finalizarAguardar();
                         });
                     }
 
@@ -179,12 +180,11 @@
 
 
             } else {
-                div_LoginDoUsuario.innerHTML = `<b style="color:red;">SUA SENHA DEVE CONTER 8-16 CARACTERES 
-                    E TER UM "#"!</b>`;
+
+                div_LoginDoUsuario.innerHTML = `<b style="color:white;font-size: 130%;">Sua senha deve conter mais de 8 caracteres!</b>`;
             }
         } else {
-            div_LoginDoUsuario.innerHTML = `<b style="color:red;">E-MAIL PREENCHIDO DE FORMA INCORRETA, VERIFIQUE-SE TEM "@"
-            OU ".com"!</b>`;
+            div_LoginDoUsuario.innerHTML = `<b style="color:white;font-size: 130%;">Email preenchido sem @ ou !</b>`;
         }
     }
 </script>

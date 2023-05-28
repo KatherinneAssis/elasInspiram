@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="js/funcoes.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
@@ -17,7 +18,7 @@
     <div class="containerGeralAreaTec">
         <div class="containerNavBar">
             <div class="navBarLogoTitulo">
-                <a href="1-index.html">
+                <a href="index.html">
                     <svg width="80" height="50" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M29.2397 16.1866V21.1915H15.0552V29.1505H25.0893V34.1554H15.0552V46.2892H29.7524V51.2941H8.24364V16.1866H29.2397Z"
@@ -29,15 +30,15 @@
                             fill="#CFA7A5" />
                     </svg>
                 </a>
-                <a href="1-index.html">
+                <a href="index.html">
                     <p>Elas Inspiram</p>
                 </a>
             </div>
             <div class="navBarLista">
-                <a href="1-index.html">Home</a>
-                <a href="2-quemSou.html">Quem Sou</a>
-                <a href="3-fizeramHistoria.html">Fizeram-Historia</a>
-                <a href="4-area-tec.html">Área-Tec</a>
+                <a href="index.html">Home</a>
+                <a href="quemSou.html">Quem Sou</a>
+                <a href="fizeramHistoria.html">Fizeram-Historia</a>
+                <a href="area-tec.html">Área-Tec</a>
 
                 <button onclick="cadastroTela()">Cadastro</button>
                 <button onclick="loginTela()">Login</button>
@@ -75,7 +76,7 @@
                         algoritmo para ser processado por uma máquina, está atravessando o tempo. Em um levantamento da
                         Associação das Empresas de Tecnologia da Informação e Comunicação e de Tecnologias Digitais
                         (Brasscom) mostra que no ano passado o setor de tecnologia da informação empregava no Brasil 867
-                        mil pessoas, sendo    (63,1%) homens, e 319.8 mil (36,9%) mulheres. </p>
+                        mil pessoas, sendo (63,1%) homens, e 319.8 mil (36,9%) mulheres. </p>
 
                     <p> Dentro do setor ainda há disparidades. Homens ocupam 67% dos cargos de gerência e diretoria,
                         enquanto 33% das mulheres alcançam as hierarquias mais altas. No departamento de tecnologia da
@@ -114,7 +115,7 @@
                     <input type="number" id="inputBonusMensal">
                 </div>
             </div>
-            <button onclick="AnalisarRenda()">
+            <button id="botaoCalculadora" onclick="AnalisarRenda()">
                 Analisar minha renda
             </button>
             <label id="labelResultado"></label>
@@ -127,106 +128,133 @@
                 <div class="EventoConteudo esquerda">
                     <div class="Conteudo">
                         <h3>Ada Lovelace</h3>
-                        <p> A famosa condessa de Lovelace, chamada de Augusta Ada King, ela analisava e traduzia
+                        <p id="menor"> A famosa condessa de Lovelace, chamada de Augusta Ada King, ela analisava e
+                            traduzia
                             diversos
                             materiais dos matemáticos contemporâneos.</p>
 
-                        <p> Isso ajudou para que o primeiro algoritmo do mundo fosse desenvolvido. No
+                        <p id="menor"> Isso ajudou para que o primeiro algoritmo do mundo fosse desenvolvido. No
                             entanto, nessa época, Lovelace não tinha à sua disposição máquinas que fossem capazes de
                             testar esses códigos e provar que a sua lógica estava correta.</p>
 
-                        <p> A boa notícia é que a descoberta de Ada Lovelace foi testada e comprovada anos depois de sua
+                        <p id="menor"> A boa notícia é que a descoberta de Ada Lovelace foi testada e comprovada anos
+                            depois de sua
                             morte, quando já existiam computadores com a capacidade de processar esse tipo de algoritmo.
                             É por isso que atualmente ela é considerada a mãe da computação e, inclusive, existe um
                             prêmio em seu nome destinado às pessoas que desenvolvem inovações nessa área.
                         </p>
                     </div>
+                    <img src="assets/imgs/adaLovelace.jpg" alt="">
                 </div>
                 <div class="EventoConteudo direita">
                     <div class="Conteudo">
                         <h3>Carol Shaw</h3>
-                        <p>Se você gosta de videogames, vai adorar conhecer a história de Carol Shaw. Nascida na região
-                            do Vale do Silício, no ano de 1955, ela é considerada a primeira mulher que começou a
-                            trabalhar com o desenvolvimento de jogos digitais.
-                            Shaw criou softwares para games e consoles, sendo pioneira na geração procedural de
-                            conteúdo, que nada mais é que o aumento gradual da dificuldade nos níveis do jogo. Em várias
-                            de suas obras, uma fase era totalmente diferente da outra, conceito utilizado até hoje nos
-                            maiores títulos de jogos.
-                            Com isso, a engenheira da computação foi uma das primeiras colaboradoras da Atari,
-                            trabalhando também em empresas como a Activision. Entre as suas principais contribuições,
-                            podemos citar os jogos:</p>
+                        <p id="menor">Se você gosta de videogames, vai adorar conhecer a história de Carol Shaw. Nascida
+                            na região do Vale do Silício, no ano de 1955, ela é considerada a primeira mulher que
+                            começou a trabalhar com o desenvolvimento de jogos digitais.</p>
+
+                        <p id="menor">Shaw criou softwares para games e consoles, sendo pioneira na geração procedural
+                            de conteúdo, que nada mais é que o aumento gradual da dificuldade nos níveis do jogo.</p>
+
+                        <p id="menor">Em várias de suas obras, uma fase era totalmente diferente da outra, conceito
+                            utilizado até hoje nos maiores títulos de jogos.</p>
+
+                        <p id="menor">Com isso, a engenheira da computação foi uma das primeiras colaboradoras da Atari,
+                            trabalhando também em empresas como a Activision.</p>
                     </div>
+                    <img src="assets/imgs/carolShaw.jpg" alt="">
                 </div>
                 <div class="EventoConteudo esquerda">
                     <div class="Conteudo">
                         <h3>Roberta Williams</h3>
-                        <p> Essa mulher foi a cofundadora de uma das principais empresas da indústria dos games, a
-                            Sierra, que futuramente se fundiu com a Activision. Depois de ser apresentada ao jogo
-                            Adventure, que era feito por meio de texto, Roberta Williams teve a ideia de desenvolver
-                            jogos com conteúdos visuais, criando o Mistery House, uma de suas primeiras obras de maior
-                            relevância.
 
-                            Essa sua ideia foi uma revolução no design de jogos, influenciando diversas criações. A
-                            empresa fundada junto ao seu marido, Ken Williams, foi responsável pela criação de diversos
-                            títulos conhecidos, como Phantasmagoria e King’s Quest.
+                        <p id="menor"> Essa mulher foi a cofundadora de uma das principais empresas da indústria dos
+                            games, a Sierra, que futuramente se fundiu com a Activision. </p>
+                        <p id="menor"> Depois de ser apresentada ao jogo Adventure, que era feito por meio de texto,
+                            Roberta Williams teve a ideia de desenvolver jogos com conteúdos visuais, criando o Mistery
+                            House, uma de suas primeiras obras de maior relevância.</p>
+
+                        <p id="menor"> Essa sua ideia foi uma revolução no design de jogos, influenciando diversas
+                            criações. A empresa fundada junto ao seu marido, Ken Williams, foi responsável pela criação
+                            de diversos títulos conhecidos, como Phantasmagoria e King’s Quest.
                         </p>
                     </div>
+                    <img id="roberta" src="assets/imgs/robertaWilliams.jpg" alt="">
                 </div>
                 <div class="EventoConteudo direita">
                     <div class="Conteudo">
                         <h3>Grace Hopper</h3>
-                        <p> Você já parou para pensar de onde surgiu o termo “bug” para se referir a problemas nos
-                            sistemas computacionais? Ao que tudo indica, ele passou a ser usado depois que Grace Hopper
-                            solucionou um erro de processamento de dados ao retirar um inseto (chamado de “bug” na
-                            língua inglesa) de dentro de uma máquina.
-                            Mas, claro, não foi apenas essa a sua contribuição. Hopper foi a primeira mulher a ter um
-                            PhD em Matemática na universidade de Yale. Trabalhou também na área da tecnologia dentro da
-                            Marinha dos Estados Unidos.
-                            Além disso, foi uma das idealizadoras de uma das linguagens de programação mais utilizadas
-                            para banco de dados de negócios, a COBOL. Contribuiu também para a criação do primeiro
-                            computador comercializado nos Estados Unidos, o UNIVAC.
-                        </p>
+                        <p id="menor"> Você já parou para pensar de onde surgiu o termo “bug” para se referir a
+                            problemas nos sistemas computacionais? Ao que tudo indica, ele passou a ser usado depois que
+                            Grace Hopper solucionou um erro de processamento de dados ao retirar um inseto (chamado de
+                            “bug” na língua inglesa) de dentro de uma máquina.</p>
+
+                        <p id="menor">Mas, claro, não foi apenas essa a sua contribuição. Hopper foi a primeira mulher a
+                            ter um
+                            PhD em Matemática na universidade de Yale.</p>
+
+                        <p id="menor">Trabalhou também na área da tecnologia dentro da
+                            Marinha dos Estados Unidos.</p>
+
+                        <p id="menor">Além disso, foi uma das idealizadoras de uma das linguagens de programação mais
+                            utilizadas
+                            para banco de dados de negócios, a COBOL.</p>
+                        <p id="menor">Contribuiu também para a criação do primeiro
+                            computador comercializado nos Estados Unidos, o UNIVAC.</p>
                     </div>
+                    <img id="grace" src="assets/imgs/graceHopper.jpg" alt="">
                 </div>
                 <div class="EventoConteudo esquerda">
                     <div class="Conteudo">
                         <h3>Hedy Lamarr</h3>
-                        <p> Você sabia que uma atriz do início do século XX teve influência na criação de tecnologias
+                        <p id="menor"> Você sabia que uma atriz do início do século XX teve influência na criação de
+                            tecnologias
                             aplicadas até hoje em GPS e Wi-Fi? Hedy Lamarr, além de ser famosa nos cinemas, teve ideias
-                            que foram utilizadas até mesmo para a interceptação de mensagens durante a guerra.
+                            que foram utilizadas até mesmo para a interceptação de mensagens durante a guerra.</p>
 
-                            Ao perceber a variação da frequência emitida pelas notas tocadas no piano, notou que as
-                            estações de radiocomunicação poderiam funcionar de forma parecida.
+                        <p id="menor">Ao perceber a variação da frequência emitida pelas notas tocadas no piano, notou
+                            que as
+                            estações de radiocomunicação poderiam funcionar de forma parecida.</p>
 
-                            Assim, junto de George Antheil, desenvolveu um sistema de interferência de rádio, utilizado
+                        <p id="menor">Assim, junto de George Antheil, desenvolveu um sistema de interferência de rádio,
+                            utilizado
                             para evitar a detecção de mensagens dos EUA pelos países inimigos na Segunda Guerra Mundial.
-                            Esse conceito é aplicado até hoje em smartphones, Wi-Fi, GPS, Bluetooth e diversas outras
-                            tecnologias.
+                        </p>
+
+                        <p id="menor">Esse conceito é aplicado até hoje em smartphones, Wi-Fi, GPS, Bluetooth e diversas
+                            outras
+                            tecnologias.</p>
                         </p>
                     </div>
+                    <img id="hedy" src="assets/imgs/hedyLamarr.jpg" alt="">
                 </div>
                 <div class="EventoConteudo direita">
                     <div class="Conteudo">
                         <h3> Katherine Johnson</h3>
-                        <p> Katherine Johnson, além de concluir aos 18 anos as suas primeiras graduações, em Matemática
-                            e Francês, ainda foi a primeira mulher negra a ingressar em um curso de pós-graduação na
-                            universidade West Virginia State. Suas ideias fizeram com que trabalhasse na NACA, um órgão
-                            que, futuramente, viria a se tornar a NASA.
+                        <p id="menor"> Katherine Johnson, além de concluir aos 18 anos as suas primeiras graduações, em
+                            Matemática e Francês, ainda foi a primeira mulher negra a ingressar em um curso de
+                            pós-graduação na
+                            universidade West Virginia State.</p>
+                        <p id="menor">Suas ideias fizeram com que trabalhasse na NACA, um órgão
+                            que, futuramente, viria a se tornar a NASA.</p>
 
-                            Uma de suas principais contribuições foi o cálculo de trajetória de voo para a missão de
+                        <p id="menor">Uma de suas principais contribuições foi o cálculo de trajetória de voo para a
+                            missão de
                             primeiro pouso na lua, feito pelo Apolo 11. Uma parte de sua história pode ser assistida no
-                            filme “Estrelas Além do Tempo”.
-
-                            Ver as histórias de mulheres na tecnologia é fundamental para se inspirar a seguir na
-                            carreira de interesse, independentemente dos desafios enfrentados. É importante se lembrar
-                            de que a maioria dessas figuras se desenvolveu em épocas em que apenas ter acesso ao Ensino
-                            Superior já era difícil para pessoas do sexo feminino. Ainda existe um longo caminho a ser
-                            percorrido, mas, olhando a trajetória de diversas pessoas, é possível ter esperança de
-                            muitos avanços na área.
+                            filme “Estrelas Além do Tempo”.</p>
                         </p>
                     </div>
+                    <img id="katherinne" src="assets/imgs/katherineJohnson.jpg" alt="">
                 </div>
             </div>
+            <p id="paragrafofim">Ver histórias de mulheres na tecnologia é fundamental para se inspirar a seguir na
+                carreira, independentemente dos desafios enfrentados. É importante se lembrar de que a maioria dessas
+                figuras se desenvolveu em épocas em que apenas ter
+                acesso ao Ensino Superior já era difícil para pessoas do sexo feminino. Ainda existe um longo caminho a
+                ser
+                percorrido, mas, olhando a trajetória de diversas pessoas, é possível ter esperança de
+                muitos avanços na área.
+            </p>
         </div>
 
         <div class="footer">
@@ -273,3 +301,7 @@
 </body>
 
 </html>
+
+<script>
+
+</script>
