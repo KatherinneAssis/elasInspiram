@@ -10,9 +10,34 @@ create table tbUsuario(
 idUsuario int primary key auto_increment,
 nomeUsuario varchar(45),
 emailUsuario varchar(45) unique,
-senhaUsuario  varchar(45),
-confirmacaoSenha varchar(45)
+senhaUsuario  varchar(45)
 );
+
+CREATE TABLE aviso (
+	idAviso INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(150),
+    dtCriacao datetime, 
+	fk_usuario INT,
+	FOREIGN KEY (fk_usuario) REFERENCES tbUsuario(idUsuario)
+);
+
+SELECT 
+		a.idAviso,
+		a.titulo,
+		a.descricao,
+		a.fk_usuario,
+		u.idUsuario,
+		u.nomeUsuario,
+		u.emailUsuario,
+		u.senhaUsuario
+	FROM aviso a
+		INNER JOIN tbUsuario u
+			ON a.fk_usuario = u.idUsuario ORDER BY a.idAviso desc;
+
+
+
+
 
 
 /*

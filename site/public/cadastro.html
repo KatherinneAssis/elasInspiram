@@ -71,12 +71,12 @@
                         <span>Confirmação da Senha:</span>
                         <input id="confirmacao_senha_input" type="password" placeholder="******">
                     </div>
-                    <div id="div_aguardar" class="loading-div" style="display: none;">
+                    <div id="div_//aguardar" class="loading-div" style="display: none;">
                         <img height="100px" src="assets/imgs/giphyCarregamento.gif" alt="">
                     </div>
                     <button onclick="cadastrar()">Cadastrar</button>
                 </div>
-                <div id="div_aguardar" class="loading-div">
+                <div id="div_//aguardar" class="loading-div">
                 </div>
                 <div id="div_erros_login"></div>
             </div>
@@ -131,7 +131,7 @@
 
 <script>
     function cadastrar() {
-        aguardar()
+        //aguardar()
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -141,7 +141,7 @@
             // cardErro.style.display = "block"
             swal("Ops", "Preencha os campos obrigatórios", "Error")
 
-            finalizarAguardar();
+            //aguardar();
             return false;
         }
         else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {

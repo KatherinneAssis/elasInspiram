@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <script src="script.js"></script>
-    <link rel="shortcut icon" href="assets/favicon/faviconEI.ico" type="image/x-icon">
+    <script src="../script.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <link rel="shortcut icon" href="../assets/favicon/faviconEI.ico" type="image/x-icon">
 
     <title>Elas Inspiram | Mural</title>
 </head>
 
-<body id="bodyMural">
+<body id="bodyMural" onload="validarSessao(), atualizarFeed()">
     <div class="containerMenu">
         <div class="menuMural">
             <div class="muralLogo">
@@ -48,6 +49,7 @@
         <div id="muralApoio" class="conteudoOpcaoMural">
             <h1>Mural de apoio</h1>
             <h3>Gostaria de compartilhar algo? Aqui é o seu espaço para isto!</h3>
+
             <form class="muralPostagens" id="formularioPostagem" method="post" onsubmit="return publicar()">
                 <span>Título do depoimento:</span>
                 <input name="titulo" id="titulo" maxlength="100" type="text">
@@ -55,19 +57,100 @@
                 <textarea name="descricao" id="textarea_descricao" maxlength="1000" rows="20"></textarea>
                 <button>Enviar</button>
             </form>
-        </div>
-        <div id="causasMural" class="conteudoOpcaoMural">
-            <h1>Apoie
-                Causas</h1>
-            <p>causas.</p>
-        </div>
-        <div id="doacoesMural" class="conteudoOpcaoMural">
-            <h1>Minhas
-                Doações</h1>
-            <p>doacoes</p>
+
+            <div class="div-results">
+                <div id="feed_container" class="feed-container">
+                </div>
+            </div>
         </div>
     </div>
+    <div id="causasMural" class="conteudoOpcaoMural">
+        <div class="MuralApoieCausas">
+            <h1>Apoie Causas Aqui!</h1>
+            <span>Nesta sessão você encontra causas que precisam de você, de apoio, confira as arrecadações e clique em
+                Realizar
+                Doação! </span>
+            <div class="HeaderCausas">
+                <div class="HeaderCausasSeparação">
+                    <img src="../assets/imgs/causa (4).png" alt="">
+                    <h5>Capacitando Elas</h5>
+                </div>
+                <div class="HeaderCausasSeparação">
+                    <p>Muitas mulheres enfrentam barreiras financeiras para ingressar em carreiras de tecnologia. Doar
+                        para
+                        este projeto de estudo, e programa de capacitação, ajuda a fornecer oportunidades educacionais e
+                        de
+                        desenvolvimento profissional para mulheres que não pussuem incentivos e capital para entrar na
+                        área. Isso permite que elas
+                        adquiram habilidades necessárias para entrar e avançar na carreira de tecnologia.</p>
+                    <button>Realizar Doação</button>
+                </div>
+            </div>
+            <div class="HeaderCausas">
+                <div class="HeaderCausasSeparação">
+                    <img src="../assets/imgs/causa (3).png" alt="">
+                    <h5>Bolsas STEM</h5>
+                </div>
+                <div class="HeaderCausasSeparação">
+                    <p>Oferecemos bolsas de estudo específicas para mulheres interessadas em ciência, tecnologia,
+                        engenharia e matemática (STEM) é uma forma eficaz de apoiar a participação delas nessas áreas.
+                        Essas
+                        bolsas ajudam a superar as barreiras financeiras e incentivam as mulheres a buscar carreiras em
+                        campos tradicionalmente dominados por homens.</p>
+                    <button>Realizar Doação</button>
+                </div>
+            </div>
+            <div class="HeaderCausas">
+                <div class="HeaderCausasSeparação">
+                    <img src="../assets/imgs/causa (2).png" alt="">
+                    <h5>Projeto TechWomen</h5>
+                </div>
+                <div class="HeaderCausasSeparação">
+                    <p>Uma iniciativa dedicada a capacitar mulheres e promover a igualdade de gênero no campo da
+                        tecnologia. Através de doações e parcerias, o projeto oferece bolsas de estudo, programas de
+                        treinamento e mentoria personalizados para mulheres interessadas em se envolver na área. As
+                        doações recebidas são direcionadas para a criação de programas educacionais, workshops e eventos
+                        que visam encorajar e apoiar o crescimento profissional das mulheres na indústria de tecnologia.
+                        Ao contribuir, você está ajudando a construir uma base sólida para que mais mulheres possam
+                        explorar seu potencial na área de tecnologia, promovendo uma sociedade mais inclusiva e diversa.
+                    </p>
+                    <button>Realizar Doação</button>
+                </div>
+            </div>
+            <div class="HeaderCausas">
+                <div class="HeaderCausasSeparação">
+                    <img src="../assets/imgs/causa (1).png" alt="">
+                    <h5>Girls Who Code</h5>
+                </div>
+                <div class="HeaderCausasSeparação">
+                    <p>Um projeto que busca reduzir a lacuna de gênero na indústria da tecnologia, oferecendo
+                        oportunidades de aprendizado e desenvolvimento para meninas interessadas em programação e
+                        ciências da computação. Nossas alunas além de aprender e se formar gratuitamente conosco, também
+                        são direcionadas para vagas em empresas parceiras. Lembrando que nosso processo é completamente
+                        gfratuito, então contamos com a sua ajuda para promover o crescimento profissional delas!</p>
+                    <button>Realizar Doação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="doacoesMural" class="conteudoOpcaoMural">
+        <h1>Minhas Doações</h1>
+        <p>doacoes</p>
+        <div class="todosGraficos">
+            <div class="graficos">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="graficos">
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div class="graficos">
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+    </div>
+
 </body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
 </html>
 
@@ -90,18 +173,16 @@
     }
     document.getElementById("defaultOpen").click();
 
-
-
-
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     function limparFormulario() {
-        document.getElementById("form_postagem").reset();
+        document.getElementById("formularioPostagem").reset();
     }
+
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
         var corpo = {
-            titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
+            titulo: formularioPostagem.titulo.value,
+            descricao: formularioPostagem.descricao.value
         }
         fetch(`/avisos/publicar/${idUsuario}`, {
             method: "post",
@@ -110,14 +191,14 @@
             },
             body: JSON.stringify(corpo)
         }).then(function (resposta) {
-
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                // window.location = "/dashboard/mural.html";
                 limparFormulario();
-                finalizarAguardar();
+                atualizarFeed();
+                //aguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -125,7 +206,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            //aguardar();
         });
         return false;
     }
@@ -133,7 +214,7 @@
         sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
         console.log("cliquei em editar - " + idAviso);
         window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
+        window.location = "edicao-aviso.html"
     }
     function deletar(idAviso) {
         console.log("Criar função de apagar post escolhido - ID" + idAviso);
@@ -146,7 +227,7 @@
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
+                window.location = "mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -184,12 +265,15 @@
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+
+                        // spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nomeUsuario + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
+
                         divPublicacao.className = "publicacao";
                         spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
@@ -211,23 +295,23 @@
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
-                    finalizarAguardar();
+                    //aguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            //aguardar();
         });
     }
     function testar() {
-        aguardar();
+        //aguardar();
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
         var divResultado = document.getElementById("div_feed");
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
-        finalizarAguardar();
+        //aguardar();
         return false;
     }
 </script>

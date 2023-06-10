@@ -4,17 +4,17 @@ function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
-            a.id AS idAviso,
+            a.idAviso,
             a.titulo,
             a.descricao,
             a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
+            u.idUsuario,
+            u.nomeUsuario,
+            u.emailUsuario,
+            u.senhaUsuario
         FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+            INNER JOIN tbUsuario u
+                ON a.fk_usuario = u.idUsuario ORDER BY a.idAviso desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -33,7 +33,7 @@ function pesquisarDescricao(texto) {
             u.email,
             u.senha
         FROM aviso a
-            INNER JOIN usuario u
+            INNER JOIN tbUsuario u
                 ON a.fk_usuario = u.id
         WHERE a.descricao LIKE '${texto}';
     `;
@@ -54,7 +54,7 @@ function listarPorUsuario(idUsuario) {
             u.email,
             u.senha
         FROM aviso a
-            INNER JOIN usuario u
+            INNER JOIN tbUsuario u
                 ON a.fk_usuario = u.id
         WHERE u.id = ${idUsuario};
     `;
@@ -64,8 +64,9 @@ function listarPorUsuario(idUsuario) {
 
 function publicar(titulo, descricao, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
+    const agora = new Date().getUTCDate();
     var instrucao = `
-        INSERT INTO aviso (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
+        INSERT INTO aviso (titulo, descricao, dtCriacao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${agora}, ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

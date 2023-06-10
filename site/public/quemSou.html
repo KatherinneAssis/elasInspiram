@@ -43,15 +43,19 @@
                 <button onclick="loginTela()">Login</button>
             </div>
         </div>
-
         <div class="headerQuemSou">
             <h1>Quem sou? Qual o meu propósito?</h1>
             <div class="headerQuemSouImagens">
                 <img src="assets/imgs/Katherinne.jpg" alt="">
+
                 <div class="textoQuemsou">
-                    <button class="buttonQuemSou" onclick="abrirEvento(event, 'quemSou')">Sobre Mim</button>
-                    <button class="buttonQuemSou" onclick="abrirEvento(event, 'Motivo')">Objetivo</button>
+                    <button class="buttonQuemSou" onclick="abrirEvento('quemSou', this)" id="defaultOpen">Sobre
+                        Mim</button>
+
+                    <button class="buttonQuemSou" onclick="abrirEvento('Motivo', this)"
+                        id="defaultOpen">Objetivo</button>
                 </div>
+
                 <img src="assets/imgs/sheBelieved.png" alt="">
             </div>
             <div id="quemSou" class="conteudoQuemSou">
@@ -70,52 +74,92 @@
                     fortes.</p>
             </div>
         </div>
-
         <div class="bannerQuemMeInspira">
-            <h2>E Quem Me Inspira?</h2>
-            <h3>Pessoas Fortes Que Me Influenciam e Inspiram</h3>
-            <div class="LinhaDoTempoContainer">
-                <h2></h2>
-                <div class="containerLinhaTempo">
-                    <div class="EventoConteudo esquerda">
-                        <div class="Conteudo">
-                            <h3>Gracielle Assis</h3>
-                            <p>Uma verdadeira inspiração para mim. Que ao se tornar mãe tão jovem, precisou enfrentar
-                                diversos desafios. Mas com coragem e determinação, assumiu o papel com coragem,
-                                responsabilidade e amor. Superou obstáculos que surgiram em nossos caminhos,
-                                demonstrando uma força admirável e uma vontade inabalável de oferecer a mim uma vida
-                                plena e repleta de oportunidades.</p>
+            <h2>E Claro Que Não Poderia Faltar Quem Me Inspirou e Trilhou junto á mim, meus caminhos até Aqui
+            </h2>
+            <div class="elas">
+                <div class="elasCadaUma">
+                    <div class="elasImagemNome">
+                        <img src="assets/imgs/Gracielle.jpg" alt="Minha mãe">
+                        <h3>Gracielle Assis</h3>
+                    </div>
+                    <div class="elasImagem">
+                        <p>Em uma atividade da faculdade, tive que escolher 3 pessoas para escrever cartas de gratidão,
+                            e claro que a primeira que me veio a mente foi minha mãe. Ela é a minha maior inspiração, e
+                            eu tenho tanto a agradecer que não caberiam em meras palavras. </p>
 
-                            <p> Sua história é um lembrete poderoso de que o amor e a determinação podem
-                                criar um impacto duradouro na vida de uma pessoa.</p>
+                        <p>Lembro que disse ser grata pela sua vida, honestidade, parceria, pela segurança que tenho com
+                            você ao meu lado, pelos conselhos que a vida inteira eu precisei e você esteve lá para dar.
+                            Por nunca desistir de mim, mesmo quando engravidou tão nova e imatura. Por me trazer de
+                            volta a realidade quando minhas ideias beirão a lua, por cada decisão sua pensando em mim,
+                            por cada plano seu que deu certo, pela sua felicidade, saúde, nossa parceria, e risadas que
+                            compartilhamos.</p>
+                        <p>Por cada viagem e loucuras que fizemos <br> juntas.</p>
 
-                            <p>Sou extremamente privilegiada por ter-la.</p>
-                        </div>
+                        <q>"Me perdi pelo caminho
+                            <br> Mas não paro, não
+                            <br>Já chorei mares e rios
+                            <br>Mas não afogo, não..."
+                            <br>"...Deixo a minha fé guiar
+                            <br>Sei que um dia chego lá
+                            <br>Porque Deus me fez assim
+                            <br>Dona de mim"
+                            <br> Dona de mim - IZA</q>
+
+                        <p>Você é meu porto seguro, meu refúgio e minha paz. Seu abraço é o que me fortalece nos
+                            momentos difíceis e a luz que me guia na escuridão. Sou profundamente grata por tudo que
+                            você faz e fez por mim. Sua dedicação incansável, seu amor incondicional e sua determinação
+                            são inspiração em tudo. Você me ensinou a resiliencia, e espero um dia ser resiliente como
+                            você. Nunca desistir e buscar sempre a melhor versão de mim.</p>
+
+                        <p>Agradeço por tudo, principalmente pela honra de ser sua filha, ser amada por você e ter tanta
+                            importância na sua vida. Meu amor por você é infinito e eterno mãe, muito mais do que
+                            palavras poderiam expressar, você é
+                            incrivel e importante demais pra mim!</p>
                     </div>
-                    <div class="EventoConteudo direita">
-                        <div class="Conteudo">
-                            <img src="assets/imgs/Tania.jpg" alt="Minha avó">
-                            <h3>Tânia Viana Assis</h3>
-                            <p>gafgfgfg</p>
-                        </div>
+                </div>
+
+
+                <div class="elasCadaUmaDireita">
+                    <div class="elasImagemDireita">
+                        <p>Minha avó, minha guardiã literária e uma das minhas inspirações. Um ser especial que me
+                            inspira desde antes mesmo do meu nascimento. Com amor incondicional, ela me ensinou
+                            histórias e poesias, trazendo um mundo de conhecimento e encanto.</p>
+
+                        <q>"Queriam que ela fosse do lar,
+                            <br>Mas ela era do ler,
+                            <br>com essa liberdade,
+                            <br>ela era de onde quisesse ser."
+                        </q>
+                        <p>Desde pequena, me cercou com livros, que até hoje é um dos mes hobbies favoritos. Era como se
+                            cada letra escrita nas folhas impressas fosse uma ponte que nos conectava, abrindo caminhos
+                            para a imaginação e despertando em mim o amor pela leitura. Formada em história e apaixonada
+                            por leituras e poesias, cada livro que ela escolhia era uma
+                            janela para o passado, uma fonte de conhecimento que me enriquecia e me fazia sonhar.</p>
+
+                        <q>
+                            "Vivo nas estrelas porque é lá que brilha minha alma."
+                            <br> - Manoel Bandeira
+                        </q>
+
+                        <p>Através da história e da poesia, minha avó transmitiu valores fundamentais e amor pelo
+                            conhecimento. Ela me ensinou que as palavras têm o poder de transformar vidas, de nos
+                            transportar para além das fronteiras do tempo e do espaço. Seu amor por livros e pela
+                            sabedoria permeou minha essência, moldando quem sou hoje.
+                        </p>
+                        <p>Agradeço-lhe por cada página virada, por cada palavra compartilhada. Seu amor e dedicação
+                            abriram um universo de possibilidades para mim, e cada vez que me encontro imerso em um
+                            livro, sinto sua presença ao meu lado, celebrando nossa conexão eterna através das páginas
+                            que unem nossos corações.</p>
                     </div>
-                    <div class="EventoConteudo esquerda">
-                        <div class="Conteudo">
-                            <img src="assets/imgs/beyonce.jpg" alt="Album Lemonade">
-                            <h3>Beyonce Knowles</h3>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="EventoConteudo direita">
-                        <div class="Conteudo">
-                            <img src="assets/imgs/taylor.jpg" alt="Album RED">
-                            <h3>Taylor Swift</h3>
-                            <p></p>
-                        </div>
+                    <div class="elasImagemNomeDireita">
+                        <img src="assets/imgs/Tania.jpg" alt="Minha mãe">
+                        <h3>Tânia Viana</h3>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <div class="footer">
         <div class="footerIcons">
@@ -161,3 +205,24 @@
 </body>
 
 </html>
+
+<script>
+    function abrirEvento(nomeOpcao, elmnt) {
+        var i, conteudoQuemSou, buttonQuemSou;
+
+        conteudoQuemSou = document.getElementsByClassName("conteudoQuemSou");
+        for (i = 0; i < conteudoQuemSou.length; i++) {
+            conteudoQuemSou[i].style.display = "none";
+        }
+
+        buttonQuemSou = document.getElementsByClassName("buttonQuemSou");
+        for (i = 0; i < buttonQuemSou.length; i++) {
+            buttonQuemSou[i].style.backgroundColor = "";
+        }
+
+        document.getElementById(nomeOpcao).style.display = "block";
+
+    }
+    document.getElementById("defaultOpen").click();
+
+</script>
