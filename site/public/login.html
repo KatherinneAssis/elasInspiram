@@ -61,7 +61,7 @@
                         <span>Senha:</span>
                         <input id="input_senha" type="password" placeholder="******">
                     </div>
-                    <div id="div_//aguardar" class="loading-div" style="display: none;">
+                    <div id="div_aguardar" class="loading-div" style="display: none;">
                         <img height="100px" src="assets/imgs/giphyCarregamento.gif" alt="">
                     </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
@@ -117,13 +117,16 @@
 </html>
 <script>
     function entrar() {
-        //aguardar();
+        aguardar();
         var dadosDoUsuario = {
             email: input_email.value,
             senha: input_senha.value
         }
+
         if (dadosDoUsuario.email.indexOf("@") && (dadosDoUsuario.email.endsWith(".com") || dadosDoUsuario.email.endsWith(".school"))) {
+
             div_LoginDoUsuario.innerHTML = ``;
+
             if (dadosDoUsuario.senha.length > 8 || dadosDoUsuario.senha.length < 16) {
                 fetch("/usuarios/autenticar", {
                     method: "POST",
@@ -135,36 +138,28 @@
                         senhaServer: dadosDoUsuario.senha
                     })
                 }).then(function (resposta) {
-
                     if (resposta.ok) {
                         resposta.json().then(json => {
-
                             console.log(json);
                             console.log(JSON.stringify(json));
-
                             sessionStorage.EMAIL_USUARIO = json.emailUsuario;
                             sessionStorage.NOME_USUARIO = json.nomeUsuario;
                             sessionStorage.ID_USUARIO = json.idUsuario;
 
                             setTimeout(function () {
-                                console.log('Conectado!');
                                 window.location = "dashboard/mural.html";
                             }, 1000);
                         });
 
                     } else {
-                        // Swal.fire({
-                        //     icon: 'error',
-                        //     title: 'Eita...',
-                        //     text: 'Houve um erro ao tentar realizar o login!',
-                        //     imageUrl: 'https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif'
-                        // })
-
+                        Swal.fire({
+                            icon: 'error',
+                            text: 'Houve um erro ao tentar realizar o login!',
+                        })
                         console.log("Houve um erro ao tentar realizar o login!");
-
                         resposta.text().then(texto => {
                             console.error(texto);
-                            //aguardar();
+                            aguardar();
                         });
                     }
                 }).catch(function (erro) {
@@ -172,7 +167,6 @@
                 })
                 return false;
             } else {
-
                 div_LoginDoUsuario.innerHTML = `<b style="color:white;font-size: 130%;">Sua senha deve conter mais de 8 caracteres!</b>`;
             }
         } else {

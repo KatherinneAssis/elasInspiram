@@ -14,7 +14,36 @@
 </head>
 
 <body id="bodyMural" onload="validarSessao(), atualizarFeed()">
-    <div class="containerMenu">
+    <div class="wrapperPopUp" id="pop-up">
+        <div class="login-box">
+            <div class="fechar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-door-open" viewBox="0 0 16 16">
+                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
+                    <path
+                        d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+                </svg>
+                <span onclick="fecharPopUpDoacao() ">Sair</span>
+            </div>
+            <div class="nomeCausa">
+                <label id="tituloPopUp"></label>
+            </div>
+            <form>
+                <div class="user-box">
+                    <input type="number" name="" required="">
+                    <label>Valor</label>
+                </div>
+                <center>
+                    <a href="#">
+                        Doar
+                        <span></span>
+                    </a>
+                </center>
+            </form>
+        </div>
+    </div>
+
+    <div class="containerMenu" id="containerMenu">
         <div class="menuMural">
             <div class="muralLogo">
                 <a href="index.html">
@@ -67,7 +96,8 @@
     <div id="causasMural" class="conteudoOpcaoMural">
         <div class="MuralApoieCausas">
             <h1>Apoie Causas Aqui!</h1>
-            <span>Nesta sessão você encontra causas que precisam de você, de apoio, confira as arrecadações e clique em
+            <span>Nesta sessão você encontra causas que precisam de você, de apoio, confira as arrecadações e clique
+                em
                 Realizar
                 Doação! </span>
             <div class="HeaderCausas">
@@ -76,14 +106,17 @@
                     <h5>Capacitando Elas</h5>
                 </div>
                 <div class="HeaderCausasSeparação">
-                    <p>Muitas mulheres enfrentam barreiras financeiras para ingressar em carreiras de tecnologia. Doar
+                    <p>Muitas mulheres enfrentam barreiras financeiras para ingressar em carreiras de tecnologia.
+                        Doar
                         para
-                        este projeto de estudo, e programa de capacitação, ajuda a fornecer oportunidades educacionais e
+                        este projeto de estudo, e programa de capacitação, ajuda a fornecer oportunidades
+                        educacionais e
                         de
-                        desenvolvimento profissional para mulheres que não pussuem incentivos e capital para entrar na
+                        desenvolvimento profissional para mulheres que não pussuem incentivos e capital para entrar
+                        na
                         área. Isso permite que elas
                         adquiram habilidades necessárias para entrar e avançar na carreira de tecnologia.</p>
-                    <button>Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Capacitando Elas')">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -93,11 +126,13 @@
                 </div>
                 <div class="HeaderCausasSeparação">
                     <p>Oferecemos bolsas de estudo específicas para mulheres interessadas em ciência, tecnologia,
-                        engenharia e matemática (STEM) é uma forma eficaz de apoiar a participação delas nessas áreas.
+                        engenharia e matemática (STEM) é uma forma eficaz de apoiar a participação delas nessas
+                        áreas.
                         Essas
-                        bolsas ajudam a superar as barreiras financeiras e incentivam as mulheres a buscar carreiras em
+                        bolsas ajudam a superar as barreiras financeiras e incentivam as mulheres a buscar carreiras
+                        em
                         campos tradicionalmente dominados por homens.</p>
-                    <button>Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Bolsas STEM')">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -109,12 +144,15 @@
                     <p>Uma iniciativa dedicada a capacitar mulheres e promover a igualdade de gênero no campo da
                         tecnologia. Através de doações e parcerias, o projeto oferece bolsas de estudo, programas de
                         treinamento e mentoria personalizados para mulheres interessadas em se envolver na área. As
-                        doações recebidas são direcionadas para a criação de programas educacionais, workshops e eventos
-                        que visam encorajar e apoiar o crescimento profissional das mulheres na indústria de tecnologia.
+                        doações recebidas são direcionadas para a criação de programas educacionais, workshops e
+                        eventos
+                        que visam encorajar e apoiar o crescimento profissional das mulheres na indústria de
+                        tecnologia.
                         Ao contribuir, você está ajudando a construir uma base sólida para que mais mulheres possam
-                        explorar seu potencial na área de tecnologia, promovendo uma sociedade mais inclusiva e diversa.
+                        explorar seu potencial na área de tecnologia, promovendo uma sociedade mais inclusiva e
+                        diversa.
                     </p>
-                    <button>Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Projeto TechWomen')">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -125,10 +163,13 @@
                 <div class="HeaderCausasSeparação">
                     <p>Um projeto que busca reduzir a lacuna de gênero na indústria da tecnologia, oferecendo
                         oportunidades de aprendizado e desenvolvimento para meninas interessadas em programação e
-                        ciências da computação. Nossas alunas além de aprender e se formar gratuitamente conosco, também
-                        são direcionadas para vagas em empresas parceiras. Lembrando que nosso processo é completamente
-                        gfratuito, então contamos com a sua ajuda para promover o crescimento profissional delas!</p>
-                    <button>Realizar Doação</button>
+                        ciências da computação. Nossas alunas além de aprender e se formar gratuitamente conosco,
+                        também
+                        são direcionadas para vagas em empresas parceiras. Lembrando que nosso processo é
+                        completamente
+                        gfratuito, então contamos com a sua ajuda para promover o crescimento profissional delas!
+                    </p>
+                    <button onclick="aparecerPopUpDoacao('Girls Who Code')">Realizar Doação</button>
                 </div>
             </div>
         </div>
@@ -148,9 +189,8 @@
             </div>
         </div>
     </div>
-
 </body>
-<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </html>
 
@@ -173,17 +213,30 @@
     }
     document.getElementById("defaultOpen").click();
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function aparecerPopUpDoacao(titulo) {
+        var popUp = document.getElementById(`pop-up`);
+        tituloPopUp.innerHTML = titulo;
+        popUp.style.display = "flex";
+        popUp.style.position = "fixed";
+    }
+
+    function fecharPopUpDoacao() {
+        var popUp = document.getElementById(`pop-up`);
+        popUp.style.display = "none";
+        escurecer.style.opacity = 1;
+    }
     function limparFormulario() {
         document.getElementById("formularioPostagem").reset();
     }
-
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
+        var nomeUsuario = sessionStorage.NOME_USUARIO;
+
         var corpo = {
             titulo: formularioPostagem.titulo.value,
             descricao: formularioPostagem.descricao.value
         }
+
         fetch(`/avisos/publicar/${idUsuario}`, {
             method: "post",
             headers: {
@@ -194,11 +247,11 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                // window.location = "/dashboard/mural.html";
+                window.alert(nomeUsuario + ", Seu post foi realizado com sucesso!");
+                window.location = "mural.html";
                 limparFormulario();
                 atualizarFeed();
-                //aguardar();
+                aguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -206,7 +259,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            //aguardar();
+            aguardar();
         });
         return false;
     }
@@ -237,9 +290,8 @@
             console.log(`#ERRO: ${resposta}`);
         });
     }
-
     function atualizarFeed() {
-        //aguardar();
+        aguardar();
         fetch("/avisos/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -267,9 +319,9 @@
                         var btnDeletar = document.createElement("button");
 
                         // spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nomeUsuario + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        spanNome.innerHTML = publicacao.nomeUsuario + " - ";
+                        spanTitulo.innerHTML = publicacao.titulo;
+                        divDescricao.innerHTML = "Depoimento: <b>" + publicacao.descricao + "</b>";
 
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
@@ -295,23 +347,23 @@
                         divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
-                    //aguardar();
+                    aguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            //aguardar();
+            aguardar();
         });
     }
     function testar() {
-        //aguardar();
+        aguardar();
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
         var divResultado = document.getElementById("div_feed");
         divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
         divResultado.innerHTML = formulario.get("descricao");
-        //aguardar();
+        aguardar();
         return false;
     }
 </script>

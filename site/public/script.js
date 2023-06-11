@@ -9,5 +9,5 @@ function loginTela() {
 
 function SairLogin() {
     sessionStorage.clear();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
