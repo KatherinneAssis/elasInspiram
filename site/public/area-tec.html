@@ -104,21 +104,21 @@
             <div class="headerSalárioInputs">
                 <div class="InputsEspaco">
                     <span>Seu sálario:</span>
-                    <input type="number" id="inputSalário">
+                    <input type="number" id="input_salario">
                 </div>
                 <div class="InputsEspaco">
                     <span>Adicional mensal:</span>
-                    <input type="number" id="inputAddMensal">
+                    <input type="number" id="input_adicional">
                 </div>
                 <div class="InputsEspaco">
                     <span>Bônus mensal:</span>
-                    <input type="number" id="inputBonusMensal">
+                    <input type="number" id="input_bonus">
                 </div>
             </div>
             <button id="botaoCalculadora" onclick="AnalisarRenda()">
                 Analisar minha renda
             </button>
-            <label id="labelResultado"></label>
+            <div id="div_resultado"></div>
         </div>
         <div class="LinhaDoTempoContainer">
             <h2> 5 Mulheres Que Fizeram Historia Na Tecnologia</h2>
@@ -301,5 +301,42 @@
 </html>
 
 <script>
+    function AnalisarRenda() {
+        var salario = Number(input_salario.value);
+        var adicional = Number(input_adicional.value);
+        var bonus = Number(input_bonus.value);
+        var bruto = salario + adicional + bonus;
 
+        var desconto_ir = 0;
+        var bruto_pos_ir = bruto;
+
+        if (bruto >= 10000) {
+            desconto_ir = bruto * (12.5 / 100);
+            bruto_pos_ir = bruto - desconto_ir;
+        };
+
+        var desconto_inss = bruto_pos_ir * (10 / 100);
+
+        var desconto_fgts = bruto_pos_ir * (8 / 100);
+
+        var liquido = bruto_pos_ir - (desconto_inss + desconto_fgts);
+
+        div_resultado.innerHTML = `<b>Análise da sua renda:</b>
+        <br><br>
+        Com o salário de <b>R$${salario}</b>, com o adicional de <b>R$${adicional}</b> e o bônus de <b>R$${bonus}</b>, você tem:
+        <br><br>
+        Bruto: <b>R$${bruto}</b><br>
+        IR: <b>R$${desconto_ir}</b><br>
+        INSS: <b>R$${desconto_inss}</b><br>
+        FGTS: <b>R$${desconto_fgts}</b><br>
+        Liquido: <b>R$${liquido}</b>`;
+
+        if (liquido > 2500) {
+            var poupanca_mensal = liquido * (15 / 100);
+            var poupanca_anual = poupanca_mensal * 12;
+
+            div_resultado.innerHTML += `<br><br>
+            Com a renda de <b>R$${liquido}</b>, é recomendado poupar <b>R$${poupanca_mensal}</b>, para que em um ano tenha poupado <b>R$${poupanca_anual}</b>`;
+        }
+    }
 </script>
