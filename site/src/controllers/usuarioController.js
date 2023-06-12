@@ -87,9 +87,40 @@ function cadastrar(req, res) {
             );
     }
 }
+
+async function dadosGrafico(req, res) {
+    var id = req.params.id;
+
+    if (id == undefined) {
+        console.log("Id está undefined");
+        res.status(400).send("O id esta Undefined")
+    } else {
+        var resposta = await usuarioModel.dadosGrafico(id);
+        res.status(200).json(resposta)
+    }
+
+
+}
+
+async function realizarDoacao(req, res) {
+    var idCausa = req.params.idCausa;
+    var idUsuario = req.params.idUsuario;
+    var valor = req.params.valor
+
+    var resposta = await usuarioModel.realizarDoacao(idCausa, idUsuario, valor);
+    res.status(200).json(resposta);
+}
+
+function totalPorCausa(req, res) {
+    usuarioModel.totalPorCausa().then(result => res.json(result))
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    dadosGrafico,
+    realizarDoacao,
+    totalPorCausa
 }

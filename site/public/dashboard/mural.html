@@ -16,24 +16,24 @@
 <body id="bodyMural" onload="validarSessao(), atualizarFeed()">
     <div class="wrapperPopUp" id="pop-up">
         <div class="login-box">
-            <div class="fechar">
+            <div class="fechar" onclick="fecharPopUpDoacao() ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-door-open" viewBox="0 0 16 16">
                     <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
                     <path
                         d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
                 </svg>
-                <span onclick="fecharPopUpDoacao() ">Sair</span>
+                <span>Sair</span>
             </div>
             <div class="nomeCausa">
                 <label id="tituloPopUp"></label>
             </div>
             <form>
                 <div class="user-box">
-                    <input type="number" name="" required="">
+                    <input type="number" id="valorDoacao" name="" required="">
                     <label>Valor</label>
                 </div>
-                <center>
+                <center id="wrapperBtnDoar">
                     <a href="#">
                         Doar
                         <span></span>
@@ -116,7 +116,7 @@
                         na
                         área. Isso permite que elas
                         adquiram habilidades necessárias para entrar e avançar na carreira de tecnologia.</p>
-                    <button onclick="aparecerPopUpDoacao('Capacitando Elas')">Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Capacitando Elas', 1)">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -132,7 +132,7 @@
                         bolsas ajudam a superar as barreiras financeiras e incentivam as mulheres a buscar carreiras
                         em
                         campos tradicionalmente dominados por homens.</p>
-                    <button onclick="aparecerPopUpDoacao('Bolsas STEM')">Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Bolsas STEM', 2)">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -152,7 +152,7 @@
                         explorar seu potencial na área de tecnologia, promovendo uma sociedade mais inclusiva e
                         diversa.
                     </p>
-                    <button onclick="aparecerPopUpDoacao('Projeto TechWomen')">Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Projeto TechWomen',3)">Realizar Doação</button>
                 </div>
             </div>
             <div class="HeaderCausas">
@@ -169,32 +169,130 @@
                         completamente
                         gfratuito, então contamos com a sua ajuda para promover o crescimento profissional delas!
                     </p>
-                    <button onclick="aparecerPopUpDoacao('Girls Who Code')">Realizar Doação</button>
+                    <button onclick="aparecerPopUpDoacao('Girls Who Code',4)">Realizar Doação</button>
                 </div>
             </div>
         </div>
     </div>
     <div id="doacoesMural" class="conteudoOpcaoMural">
-        <h1>Minhas Doações</h1>
-        <p>doacoes</p>
-        <div class="todosGraficos">
-            <div class="graficos">
-                <canvas id="myChart"></canvas>
+        <div class="conteudoMural2">
+            <h1>Apoios feitos por você!</h1>
+
+            <div class="graficosNumeros">
+                <div class="graficosNumeros2">
+                    <div class="doadosPorVoce">
+                        <div class="titleDoacao">
+                            <span>
+                                <svg width="20" fill="currentColor" height="20" viewBox="0 0 1792 1792"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1362 1185q0 153-99.5 263.5t-258.5 136.5v175q0 14-9 23t-23 9h-135q-13 0-22.5-9.5t-9.5-22.5v-175q-66-9-127.5-31t-101.5-44.5-74-48-46.5-37.5-17.5-18q-17-21-2-41l103-135q7-10 23-12 15-2 24 9l2 2q113 99 243 125 37 8 74 8 81 0 142.5-43t61.5-122q0-28-15-53t-33.5-42-58.5-37.5-66-32-80-32.5q-39-16-61.5-25t-61.5-26.5-62.5-31-56.5-35.5-53.5-42.5-43.5-49-35.5-58-21-66.5-8.5-78q0-138 98-242t255-134v-180q0-13 9.5-22.5t22.5-9.5h135q14 0 23 9t9 23v176q57 6 110.5 23t87 33.5 63.5 37.5 39 29 15 14q17 18 5 38l-81 146q-8 15-23 16-14 3-27-7-3-3-14.5-12t-39-26.5-58.5-32-74.5-26-85.5-11.5q-95 0-155 43t-60 111q0 26 8.5 48t29.5 41.5 39.5 33 56 31 60.5 27 70 27.5q53 20 81 31.5t76 35 75.5 42.5 62 50 53 63.5 31.5 76.5 13 94z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <p class="tittleDoadosPorVoce">Doados por você</p>
+                        </div>
+                        <div class="valorTotalDoado">
+                            <p id="labelValorTotalDoado">0</p>
+                            <div class="range">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doadosPorVoce">
+                        <div class="titleDoacao">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-clipboard-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                                    <path fill-rule="evenodd"
+                                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm4 5.982c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                </svg>
+                            </span>
+                            <p class="tittleDoadosPorVoce">Apoiadas por Você</p>
+                        </div>
+                        <div class="valorTotalDoado">
+                            <p id="labelApoiados">500</p>
+                            <div class="range">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doadosPorVoce">
+                        <div class="titleDoacao">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-sort-up" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707V12.5zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z" />
+                                </svg>
+                            </span>
+                            <p class="tittleDoadosPorVoce">Numero de Doações</p>
+                        </div>
+                        <div class="valorTotalDoado">
+                            <p id="labelNumeroDoacoes">22</p>
+                            <div class="range">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graficoMaior">
+                    <h4></h4>
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
             </div>
-            <div class="graficos">
-                <canvas id="myChart2"></canvas>
-            </div>
-            <div class="graficos">
-                <canvas id="myChart3"></canvas>
-            </div>
-        </div>
-    </div>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </html>
 
 <script>
+
+    async function realizarDoacao(idCausa) {
+        var resposta = await fetch("/usuarios/realizarDoacao/" + sessionStorage.ID_USUARIO + "/" + idCausa + "/" + valorDoacao.value);
+
+        if (resposta.ok) {
+            alert("Inserido com Sucesso");
+            fecharPopUpDoacao();
+            resposta = await resposta.json();
+        } else {
+            alert("Erro ao doar");
+        }
+    }
+
+
+    const ctx = document.getElementById('myChart');
+    const graficoBarra = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Total arrecadado',
+                data: [],
+                borderWidth: 1,
+                backgroundColor: [
+                    'pink',
+                    '#b9106a'
+                ]
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
     function abrirEspecificoMenu(nomeOpcaoMenu, elmnt) {
         var i, conteudoOpcaoMural, opcaoMural;
 
@@ -212,18 +310,22 @@
 
     }
     document.getElementById("defaultOpen").click();
-
-    function aparecerPopUpDoacao(titulo) {
+    function aparecerPopUpDoacao(titulo, idCausa) {
         var popUp = document.getElementById(`pop-up`);
         tituloPopUp.innerHTML = titulo;
+        wrapperBtnDoar.innerHTML = `
+         <a onclick="realizarDoacao(${idCausa})">
+                        Doar
+                        <span></span>
+                    </a>
+        `
         popUp.style.display = "flex";
         popUp.style.position = "fixed";
     }
-
     function fecharPopUpDoacao() {
         var popUp = document.getElementById(`pop-up`);
         popUp.style.display = "none";
-        escurecer.style.opacity = 1;
+        //  escurecer.style.opacity = 1;
     }
     function limparFormulario() {
         document.getElementById("formularioPostagem").reset();
@@ -366,4 +468,31 @@
         aguardar();
         return false;
     }
+
+
+
+    async function buscarDados() {
+        var resposta = await fetch("/usuarios/dadosGrafico/" + sessionStorage.ID_USUARIO)
+        resposta = await resposta.json();
+        labelValorTotalDoado.innerHTML = resposta[0].valor;
+        labelNumeroDoacoes.innerHTML = resposta[0].qtdDoacao;
+        labelApoiados.innerHTML = resposta[0].valor / 10;
+    }
+
+    async function buscarDadosTotalArrecadado() {
+        var resposta = await fetch('/usuarios/totalArrecadado').then(res => res.json())
+        console.log(resposta)
+        graficoBarra.data.labels = []
+        graficoBarra.data.datasets[0].data = []
+
+        for (let i = 0; i < resposta.length; i++) {
+            const causa = resposta[i];
+            graficoBarra.data.labels.push(causa.nomeCausa)
+            graficoBarra.data.datasets[0].data.push(causa.total)
+        }
+        graficoBarra.update()
+    }
+
+    buscarDados();
+    buscarDadosTotalArrecadado()
 </script>

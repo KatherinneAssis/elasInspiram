@@ -31,8 +31,33 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+function dadosGrafico(idUsuario) {
+    var instrucao = `
+       select count(*) as qtdDoacao, sum(valorDoacao) as valor from tbDoacoes where fkUsuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function realizarDoacao(idCausa, idUsuario, valor) {
+    var instrucao = `
+     INSERT INTO tbDoacoes values
+(null, ${valor}, ${idUsuario}, ${idCausa})
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function totalPorCausa() {
+    var instrucao = 'select nomeCausa, sum(valorDoacao) as total from tbCausa left join tbDoacoes on fkCausa = idCausa group by nomeCausa;'
+    return database.executar(instrucao)
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    dadosGrafico,
+    realizarDoacao,
+    totalPorCausa
 };

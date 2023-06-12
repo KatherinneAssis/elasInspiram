@@ -1212,7 +1212,7 @@ body {
     position: fixed;
     border: none;
     display: flex;
-    width: 20%;
+    width: 18%;
     float: left;
     height: 100vh;
     align-items: center;
@@ -1278,20 +1278,28 @@ body {
     background-color: #CFA7A5;
 }
 
-.menuMural button.active {
-    color: #000000;
-    background-color: #CFA7A5;
+.menuMural button:focus {
+    color: #000000b2;
+    background-color: #cfa7a583;
 }
 
 .conteudoMural {
     width: 70%;
     float: right;
     margin-top: 3%;
-    margin-left: 25%;
+    margin-left: 23%;
     font-size: 90%;
     font-weight: bold;
     border-left: none;
     color: #fbfbfb;
+}
+
+.conteudoOpcaoMural {
+    display: none;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: #000000;
 }
 
 #buttonSair {
@@ -1306,13 +1314,6 @@ body {
     background-color: #000000;
 }
 
-.conteudoOpcaoMural {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-}
 
 #muralApoio {
     text-align: left;
@@ -1635,4 +1636,118 @@ body {
     height: 2px;
     background: linear-gradient(90deg, transparent, #03f40f);
     animation: btn-anim1 2s linear infinite;
+}
+
+
+
+
+.conteudoMural2 {
+    width: 73%;
+    float: right;
+    padding: 20px;
+    font-size: 90%;
+    margin-right: 2%;
+    font-weight: bold;
+    border-left: none;
+    border-radius: 20px;
+
+    color: #fbfbfb;
+    background-color: #000000c5;
+}
+
+.conteudoMural2 h1 {
+    font-size: 250%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #fa0071, rgba(182, 69, 146, 0.567), rgba(180, 0, 159, 0.539));
+}
+
+.doadosPorVoce {
+    width: 20%;
+    padding: 30px;
+    background-color: #d9aec6;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
+
+.titleDoacao {
+    display: flex;
+    align-items: center;
+}
+
+.titleDoacao span {
+    position: relative;
+    padding: 0.5rem;
+    background-color: #b9106a;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 9999px;
+}
+
+.titleDoacao span svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    height: 1rem;
+}
+
+.tittleDoadosPorVoce {
+    margin-left: 0.5rem;
+    color: #374151;
+    font-size: 90%;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.valorTotalDoado p {
+    margin: 2%;
+    font-size: 200%;
+    font-weight: 700;
+    text-align: left;
+    color: #1F2937;
+}
+
+.valorTotalDoado .range {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #cd528575;
+}
+
+.valorTotalDoado .range .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 76%;
+    height: 100%;
+    border-radius: 0.25rem;
+    background-color: #b9106a;
+}
+
+
+.graficosNumeros {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.graficosNumeros2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.graficoMaior {
+    width: 80%;
 }

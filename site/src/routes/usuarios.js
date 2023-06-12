@@ -20,4 +20,16 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.get("/dadosGrafico/:id", function (req, res) {
+    usuarioController.dadosGrafico(req, res)
+})
+
+router.get("/realizarDoacao/:idUsuario/:idCausa/:valor", function (req, res) {
+    usuarioController.realizarDoacao(req, res);
+})
+
+router.get('/totalArrecadado', function (req, res) {
+    usuarioController.totalPorCausa(req, res)
+})
+
 module.exports = router;
